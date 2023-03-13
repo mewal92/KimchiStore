@@ -20,4 +20,5 @@ function panel(){
       </nav>
     `
 }
+
 panel();
