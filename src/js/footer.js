@@ -4,4 +4,5 @@ function footer(){
     <b>Copyright &copy; 2023 - Melinda Walter, Oscar Jidåker, Kevin Dybeck, Gustav Henriksson</b>
     `
 }
+
 footer();

@@ -1,3 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  
+  font-family: "Manrope", sans-serif;
+}
+
+/*Gör att saker kan byta färg lite långsammare och inte instant*/
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+/*Förlänger tiden saker förändrar sig på, använd tex med hover*/
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.hover-color-dark-gray:hover {
+  color: rgb(39, 39, 42);
+}
+
+.text-black{
+  color: rgb(0, 0, 0);
+}
+
 /*Bakgrunden */
 body {
     background-color: lightblue;
@@ -18,7 +46,7 @@ p {
 
 }
 
-header {
+section {
   margin-top: 50px;
   margin-left: 30; 
     margin-right: 30;
@@ -50,11 +78,8 @@ h2 {
 
 
 /* navigerings listan längst upp*/
-#nav {
-  list-style-type: none;
+.nav {
   display: block;
-  margin: 0px;
-  padding: 0;
   overflow: hidden;
    background: rgb(0, 0, 0); 
   background: rgba(1, 0, 0, 0.685); /*genomskinlighet på navigeringsmenyn */
@@ -63,7 +88,7 @@ h2 {
   top: 0;
   width: 100%;
   z-index: 1; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
-  float: right;
+  /*float: right;*/
 }
 
 li {
