@@ -1,5 +1,5 @@
-function header(){
-    const header = document.querySelector("#header");
+function panel(){
+    const header = document.querySelector("#panel");
     
     if(window.document.location.pathname === "/") {
         window.document.location.pathname = "/index.html"
@@ -20,4 +20,4 @@ function header(){
       </nav>
     `
 }
-header();
+panel();
