@@ -1,4 +1,4 @@
-/* Bakgrundsbild som ska täcka och inte flytta på sig när man bläddrar */
+/*Bakgrunden */
 body {
     background-color: lightblue;
     background-size: cover;
