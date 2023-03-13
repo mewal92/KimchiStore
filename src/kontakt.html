@@ -1,52 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head><!-- responsivitet -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<title>Webbbutik</title>
-<!-- länk till stilmallen -->
-<link href="css/stilmall.css" rel="Stylesheet" type="text/css" />
-<script src="js/footer.js"  type="module"></script>
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Allura&family=Dosis:wght@300&family=Karla:wght@300&display=swap');
-	</style>
-</head>
+  <head>
+    <!-- responsivitet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Webbbutik</title>
+    <!-- länk till stilmallen -->
+    <link href="css/stilmall.css" rel="Stylesheet" type="text/css" />
+    <script src="js/footer.js" type="module"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Allura&family=Dosis:wght@300&family=Karla:wght@300&display=swap");
+    </style>
+  </head>
 
-
-<!-- navigeringsmeny som en lista -->
-<ul id="nav">
-	<li><a href="kontakt.html">Kontakt</a></li>
+  <!-- navigeringsmeny som en lista -->
+  <ul id="nav">
+    <li><a href="kontakt.html">Kontakt</a></li>
     <li><a href="produkter.html">Produkter</a></li>
     <li><a href="order.html">Beställning</a></li>
-    	 <li><a href="index.html">Startsida</a></li></ul>
-<body>
+    <li><a href="index.html">Startsida</a></li>
+  </ul>
+  <body>
+    <center>
+      <header>
+        <h1>Webbutik</h1>
+        <hr />
+      </header>
+    </center>
 
-		<center>
-	<header>
-<h1>Webbutik</h1>
-<HR>
-</header></center>
+    <div class="flex-containerkontakt">
+      <h4>Kontakta oss här:</h4>
+      <form action="action_page.html">
+        <!-- label för att användaren ska kunna fylla i sina uppgifter-->
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Skriv ditt namn här.."
+        />
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Skriv din mejl-adress här.."
+        />
+        <!-- här kan användaren skriva sitt meddelande och ämne -->
+        <textarea
+          id="subject"
+          name="subject"
+          placeholder="Skriv ett meddelande"
+          style="height: 100px"
+        ></textarea>
+        <br />
+        <!-- knapp för att skicka in formulär-->
+        <input type="submit" value="Submit" />
+      </form>
+      <br />
+    </div>
 
-<div class="flex-containerkontakt"> 
-    <h4>Kontakta oss här:</h4>
-	<form action="action_page.html">
-		<!-- label för att användaren ska kunna fylla i sina uppgifter-->
-			<input type="text" id="fname" name="firstname" placeholder="Skriv ditt namn här..">
-			<input type="text" id="lname" name="lastname" placeholder="Skriv din mejl-adress här..">
-			<!-- här kan användaren skriva sitt meddelande och ämne -->
-			<textarea id="subject" name="subject" placeholder="Skriv ett meddelande" style="height:100px"></textarea>
-            <br>
-		<!-- knapp för att skicka in formulär-->
-			<input type="submit" value="Submit">
-		
-		  </form>
-		  <br>
-		   </div>
-
-
-<!-- footer -->
-<footer id="footer" class="footer">
-</footer>
-    </body>
-    </head>
-    </html>
+    <!-- footer -->
+    <footer id="footer" class="footer"></footer>
+  </body>
+</html>
