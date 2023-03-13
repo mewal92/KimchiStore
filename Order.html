@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head><!-- responsivitet -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>Webbutik</title>
+<!-- länk till stilmallen -->
+<link href="Stilmall.css" rel="Stylesheet" type="text/css" />
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Allura&family=Dosis:wght@300&family=Karla:wght@300&display=swap');
+	</style>
+</head>
+
+
+<!-- navigeringsmeny som en lista -->
+<ul id="nav">
+	<li><a href="Kontakt.html">Kontakt</a></li>
+    <li><a href="Produkter.html">Produkter</a></li>
+    <li><a href="Order.html">Beställning</a></li>
+    	 <li><a href="Startsida.html">Startsida</a></li></ul>
+<body>
+
+		<center>
+	<header>
+<h1>Webbutik</h1>
+<HR>
+</header></center>
+
+<div class="flex-containerbeställning"> 
+	<div><h4>Här kan du beställa en produkt:</h4>
+<!-- skapar en form action page som leder till en html sida jag skapat -->
+<form action="action_page.html">
+
+
+  <!-- skapar en field set för en typ av formulär -->
+ <fieldset class="fieldset-for-beställning">
+
+  <legend class="legend-for-beställning1">Fyll i din beställning här:</legend>
+  <label for="fname">Förnamn: &ensp;</label>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Efternamn:</label>
+  <input type="text" id="lname" name="lname"><br>
+
+  <label for="fname">Address: &ensp;</label>
+  <input type="text" id="fname" name="fname"><br>
+    <label for="fname">Telefon: &emsp; </label>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="email">E-mail: &emsp;</label>
+  <input type="email" id="email" name="email"><br><br>
+
+  	<legend id="legend-for-boka-2">Vilken produkt vill du beställa?</legend>
+  <!-- här kan användaren välja att markera vad dom vill boka -->
+  <label for="fname">Produkt 1</label>
+  <input type="radio" id="Produkt1" name="Meny"><br>
+
+  <label for="fname">Produkt 2</label>
+   <input type="radio" id="Produkt2" name="Meny"><br>
+
+   <label for="fname">Produkt 3</label>
+   <input type="radio" id="Produkt3" name="Meny"><br>
+
+   <label for="fname">Produkt 4</label>
+   <input type="radio" id="Produkt4" name="Meny"><br>
+
+   <br>
+   <!-- knapp för att skicka in beställning-->
+     <input type="submit" value="Beställ">
+ 
+</form>
+		</div>
+</div>
+<div class="footer">
+    
+    <br>
+    <b>Copyright &copy; 2023 - Melinda Walter, Oscar Jidåker, Kevin Dybeck, Gustav Henriksson</b></div>
+    <br>
+    </body>
+    </head>
+    </html>
+

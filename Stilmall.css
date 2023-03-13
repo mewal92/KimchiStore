@@ -1,0 +1,291 @@
+/* Bakgrundsbild som ska täcka och inte flytta på sig när man bläddrar */
+body {
+    background-color: lightblue;
+    background-size: cover;
+    background-position: absolute;
+    background-attachment:fixed;
+    margin:0;
+    padding:0;
+ 
+}
+/* all text inom paragrafer ändras här */
+p {
+
+  color: rgb(0, 0, 0);
+  margin-left: 5px;
+  font-family: sans-serif;
+  font-size: 15px;
+
+}
+
+header {
+  margin-top: 50px;
+  margin-left: 30; 
+    margin-right: 30;
+   position: center; 
+  top: 0; 
+  color: #f1f1f1; 
+  width: 85%; 
+  padding: 5px; 
+    position: -webkit-fixed;
+}
+
+h1 {
+    color:rgba(1, 0, 0, 0.537);
+  font-size: 100px;
+  font-family: 'Tahoma', sans-serif;
+  padding: 0;
+  margin: 0;
+  padding-bottom: -10px;
+}
+
+h2 {
+    color:rgba(1, 0, 0, 0.2);
+  font-size: 30px;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* navigerings listan längst upp*/
+#nav {
+  list-style-type: none;
+  display: block;
+  margin: 0px;
+  padding: 0;
+  overflow: hidden;
+   background: rgb(0, 0, 0); 
+  background: rgba(1, 0, 0, 0.685); /*genomskinlighet på navigeringsmenyn */
+  position: -webkit-fixed; 
+  position: fixed; /* ska sitta fast vid toppen */
+  top: 0;
+  width: 100%;
+  z-index: 1; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
+  float: right;
+}
+
+li {
+  float: right; /* listan ska vara horistontell åt vänster */
+  width: 25%; /* varje knapp i menyn får 25% vardera */
+}
+
+li a {
+  display: block; 
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-family: 'Karla', sans-serif;
+}
+
+li a:hover {
+  background-color: #000000; 
+}
+
+li a:hover:not(.active) {
+ background: rgba(120, 179, 255, 0.4); /* genomskinlig navigeringsmeny - kontakt*/
+}
+  .active {
+ background: rgba(1, 0, 0, 0.2); 
+}
+.active:hover {
+  background: rgba(120, 179, 255, 0.4); /* när man hovrar över */
+}
+
+/* text och container för startsida */
+
+h6 {
+  color: rgb(230, 216, 72);
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-left: 253px;
+  margin-bottom: -7px;
+  padding-bottom: -30px;
+}
+
+.flex-container {
+  background: rgba(255, 255, 255, 0.3); 
+  float: center;
+  width: 700px;
+  height: 200px;
+  margin-top: 0px;
+  margin-left: 250px;
+}
+
+
+/* footer */
+.footer {
+  background: rgba(1, 0, 0, 0.751);
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+  font-size: 13px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right:0px;
+  margin-top: 0px;
+    position: fixed;
+   bottom: 0;
+   color: white;
+   padding-bottom: 10px;
+}
+
+
+
+/* KONTAKT */
+
+h4 {
+  display: block; 
+  color: black;
+  text-align: center;
+  padding: 0px;
+  text-decoration: none;
+  font-family: 'Tahoma', sans-serif;
+}
+
+h3 {
+  display: block; 
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 25px;
+}
+
+.flex-containerkontakt {
+  background: rgba(255, 255, 255, 0.4); 
+  float: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 20px;
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+
+
+/*BESTÄLLNINGSSIDA */ 
+
+.flex-containerbeställning {
+    background: rgba(255, 255, 255, 0.4); 
+    float: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 20px;
+    padding: 5px;
+    display: block;
+    text-align: left;
+    margin-bottom: 50px;
+  }
+
+input[type=text], select, textarea {
+  display: inline-block;
+  width: 60%; 
+  padding: 11px;
+  border: 1px solid #000000; 
+  border-radius: 3px; /*rundade kanter */
+}
+
+/* container för fieldset */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* fieldset formulär för bokning */
+.fieldset-for-beställning {
+    background-color: #ffffff;
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .legend-for-beställning1 {
+    text-transform: uppercase;
+    background-color: #000;
+    color: white;
+    padding: 5px 10px;
+  }
+  #legend-for-boka-2 {
+    text-transform: uppercase;
+      background-color: #000;
+      color: #fff;
+      padding: 5px 10px;
+  }
+  
+  /* här ska personen själv skriva in */
+  input {
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  .output {
+      font: 1rem 'Fira Sans', sans-serif;
+  }
+  
+  input:radio {
+      margin: .4rem;
+  }
+
+
+
+  
+  /* PRODUCTS */ 
+
+  /*rubriker för saker*/
+  h3{
+    float:left;
+    font-size: 12px;
+    font-family: 'Karla', sans-serif;
+    color: darkgrey;
+  }
+
+/*produkt container*/
+#products {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* produkt elementen */
+  #products div {
+    box-sizing: border-box;
+    width: calc(33.33% - 20px); /* adjust the width and margin as needed */
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* rubriker för produkter */
+  #products div h2 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  /* produkt bilder */
+  #products div img {
+    max-width: 60%;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* produkt beskrivning */
+  #products div p:nth-of-type(1) {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* produkt pris */
+  #products div p:nth-of-type(2) {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
