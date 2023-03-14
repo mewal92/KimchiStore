@@ -18,11 +18,10 @@
     <!-- navigeringsmeny som en lista -->
     <div id="panel"></div>
 
-      <header>
-        <h1>Webbutik</h1>
-        <hr />
-      </header>
-   
+    <header>
+      <h1>Webbutik</h1>
+      <hr />
+    </header>
 
     <div class="flex-containerbeställning">
       <div>
@@ -34,17 +33,53 @@
             <legend class="legend-for-beställning1">
               Fyll i din beställning här:
             </legend>
-            <label for="fname">Förnamn: &ensp;</label>
-            <input type="text" id="fname" name="fname" /><br />
-            <label for="lname">Efternamn:</label>
-            <input type="text" id="lname" name="lname" /><br />
-
-            <label for="fname">Address: &ensp;</label>
-            <input type="text" id="fname" name="fname" /><br />
-            <label for="fname">Telefon: &emsp; </label>
-            <input type="text" id="fname" name="fname" /><br />
-            <label for="email">E-mail: &emsp;</label>
-            <input type="email" id="email" name="email" /><br /><br />
+            <div class="flex auto-margin gap-16px flex-col flex-wrap">
+              <div
+                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
+              >
+                <label for="fname">Förnamn</label>
+                <input type="text" id="fname" name="fname" />
+                <label id="fname-ermsg" class="yellow"
+                  >Obligatoriskt fält</label
+                >
+              </div>
+              <div
+                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
+              >
+                <label for="lname">Efternamn</label>
+                <input type="text" id="lname" name="lname" />
+                <label id="lname-ermsg" class="yellow"
+                  >Obligatoriskt fält</label
+                >
+              </div>
+              <div
+                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
+              >
+                <label for="fname">Address</label>
+                <input type="text" id="fname" name="fname" />
+                <label id="address-ermsg" class="yellow"
+                  >Obligatoriskt fält</label
+                >
+              </div>
+              <div
+                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
+              >
+                <label for="fname">Telefon</label>
+                <input type="text" id="fname" name="fname" />
+                <label id="telefon-ermsg" class="yellow"
+                  >Obligatoriskt fält</label
+                >
+              </div>
+              <div
+                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
+              >
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" />
+                <label id="email-ermsg" class="yellow"
+                  >Obligatoriskt fält</label
+                >
+              </div>
+            </div>
 
             <legend id="legend-for-boka-2">
               Vilken produkt vill du beställa?
