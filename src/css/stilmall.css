@@ -7,23 +7,8 @@
   font-family: "Manrope", sans-serif;
 }
 
-/*Gör att saker kan byta färg lite långsammare och inte instant*/
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-/*Förlänger tiden saker förändrar sig på, använd tex med hover*/
-.duration-200 {
-  transition-duration: 200ms;
-}
-
-.hover-color-dark-gray:hover {
-  color: rgb(39, 39, 42);
-}
-
-.text-black{
-  color: rgb(0, 0, 0);
+.text-black {
+  color: #000;
 }
 
 /*Bakgrunden */
@@ -106,6 +91,9 @@ li a {
 }
 
 li a:hover {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 350ms;
   background-color: #000000; 
 }
 
@@ -114,6 +102,7 @@ li a:hover:not(.active) {
 }
   .active {
  background: rgba(1, 0, 0, 0.2); 
+ color: #000;
 }
 .active:hover {
   background: rgba(120, 179, 255, 0.4); /* när man hovrar över */
