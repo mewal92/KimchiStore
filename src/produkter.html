@@ -9,7 +9,7 @@
     <link href="css/stilmall.css" rel="Stylesheet" type="text/css" />
     <script src="js/footer.js" type="module"></script>
     <script src="./js/panel.js" type="module" defer></script>
-
+    <script src="js/products.js" type="module" defer></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Allura&family=Dosis:wght@300&family=Karla:wght@300&family=Quicksand:wght@300&display=swap");
     </style>
@@ -18,33 +18,11 @@
   <body>
     <!-- navigeringsmeny som en lista -->
     <div id="panel"></div>
-<header>
-        <h2>Våra produkter</h2></header>
-    
-
+    <header>
+      <h2>Våra produkter</h2>
+    </header>
     <!-- display products -->
     <div id="products"></div>
-
-    <script>
-      fetch("https://fakestoreapi.com/products")
-        .then((response) => response.json())
-        .then((data) => {
-          const productsContainer = document.getElementById("products");
-
-          data.forEach((product) => {
-            const productElement = document.createElement("div");
-            productElement.innerHTML = `
-			  <h3>${product.title}</h3>
-			  <img src="${product.image}" alt="${product.title}">
-			  <p>${product.description}</p>
-			  <p>${product.price}</p>
-			`;
-            productsContainer.appendChild(productElement);
-          });
-        })
-        .catch((error) => console.error(error));
-    </script>
-
     <footer id="footer" class="footer"></footer>
   </body>
 </html>
