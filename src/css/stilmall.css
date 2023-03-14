@@ -113,7 +113,8 @@ li a:hover:not(.active) {
  background: rgba(120, 179, 255, 0.4); /* genomskinlig navigeringsmeny - kontakt*/
 }
   .active {
- background: rgba(1, 0, 0, 0.2); 
+ background: rgb(1, 0, 0); 
+ 
 }
 .active:hover {
   background: rgba(120, 179, 255, 0.4); /* när man hovrar över */
@@ -280,6 +281,7 @@ input[type=text], select, textarea {
   
   /* produkt elementen */
   #products div {
+    background-color: white;
     box-sizing: border-box;
     width: calc(33.33% - 20px); /* adjust the width and margin as needed */
     margin: 10px;
