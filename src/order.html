@@ -8,7 +8,8 @@
     <!-- länk till stilmallen -->
     <link href="css/stilmall.css" rel="Stylesheet" type="text/css" />
     <script src="js/footer.js" type="module"></script>
-    <script src="./js/panel.js" type="module" defer></script>
+    <script src="js/panel.js" type="module" defer></script>
+    <script src="js/ermsg.js" type="module" defer></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Allura&family=Dosis:wght@300&family=Karla:wght@300&family=Quicksand:wght@300&display=swap");
     </style>
@@ -27,79 +28,64 @@
       <div>
         <h4>Här kan du beställa en produkt:</h4>
         <!-- skapar en form action page som leder till html fil, man skicaks dit när man trycker beställ -->
-        <form action="Action-page.html">
+        <form action="action-page.html">
           <!-- skapar en field set för en typ av formulär -->
           <fieldset class="fieldset-for-beställning">
             <legend class="legend-for-beställning1">
               Fyll i din beställning här:
             </legend>
-            <div class="flex auto-margin gap-16px flex-col flex-wrap">
-              <div
-                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
-              >
-                <label for="fname">Förnamn</label>
-                <input type="text" id="fname" name="fname" />
-                <label id="fname-ermsg" class="yellow"
-                  >Obligatoriskt fält</label
-                >
-              </div>
-              <div
-                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
-              >
-                <label for="lname">Efternamn</label>
-                <input type="text" id="lname" name="lname" />
-                <label id="lname-ermsg" class="yellow"
-                  >Obligatoriskt fält</label
-                >
-              </div>
-              <div
-                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
-              >
-                <label for="fname">Address</label>
-                <input type="text" id="fname" name="fname" />
-                <label id="address-ermsg" class="yellow"
-                  >Obligatoriskt fält</label
-                >
-              </div>
-              <div
-                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
-              >
-                <label for="fname">Telefon</label>
-                <input type="text" id="fname" name="fname" />
-                <label id="telefon-ermsg" class="yellow"
-                  >Obligatoriskt fält</label
-                >
-              </div>
-              <div
-                class="flex justify-start flex-col gap-6px flex-wrap flex-nowrap"
-              >
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" />
-                <label id="email-ermsg" class="yellow"
-                  >Obligatoriskt fält</label
-                >
+            <div class="flex auto-margin gap-6px flex-col flex-wrap">
+              <label for="name">Namn</label>
+              <input type="text" id="name" name="name" />
+              <p id="name-ermsg" class="yellow">Obligatoriskt fält</p>
+
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" />
+              <p id="email-ermsg" class="yellow">Obligatoriskt fält</p>
+
+              <label for="tel">Telefon</label>
+              <input type="text" id="tel" name="tel" />
+              <p id="tel-ermsg" class="yellow">Obligatoriskt fält</p>
+
+              <label for="address">Address</label>
+              <input type="text" id="address" name="adress" />
+              <p id="address-ermsg" class="yellow">Obligatoriskt fält</p>
+
+              <div class="flex flex-row">
+                <div class="flex flex-col width-47">
+                  <label for="postnr">Postnummer</label>
+                  <input type="text" id="postnr" name="postnr" />
+                  <p id="postnr-ermsg" class="yellow">Obligatoriskt fält</p>
+                </div>
+                <div class="flex flex-col width-47">
+                  <label for="ort">Ort</label>
+                  <input type="text" id="ort" name="ort" />
+                  <p id="ort-ermsg" class="yellow">Obligatoriskt fält</p>
+                </div>
               </div>
             </div>
 
             <legend id="legend-for-boka-2">
               Vilken produkt vill du beställa?
             </legend>
-            <!-- här kan användaren välja att markera vad dom vill boka -->
-            <label for="fname">Produkt 1</label>
-            <input type="radio" id="Produkt1" name="Meny" /><br />
+            <div class="gap-16px">
+              <!-- här kan användaren välja att markera vad dom vill boka -->
+              <label for="fname">Produkt 1</label>
+              <input type="radio" id="Produkt1" name="Meny" /><br />
 
-            <label for="fname">Produkt 2</label>
-            <input type="radio" id="Produkt2" name="Meny" /><br />
+              <label for="fname">Produkt 2</label>
+              <input type="radio" id="Produkt2" name="Meny" /><br />
 
-            <label for="fname">Produkt 3</label>
-            <input type="radio" id="Produkt3" name="Meny" /><br />
+              <label for="fname">Produkt 3</label>
+              <input type="radio" id="Produkt3" name="Meny" /><br />
 
-            <label for="fname">Produkt 4</label>
-            <input type="radio" id="Produkt4" name="Meny" /><br />
+              <label for="fname">Produkt 4</label>
+              <input type="radio" id="Produkt4" name="Meny" /><br />
 
-            <br />
-            <!-- knapp för att skicka in beställning-->
-            <input type="submit" value="Beställ" />
+              <br />
+              <!-- knapp för att skicka in beställning-->
+              <input id="submit" class="hidden" type="submit" value="Beställ" />
+            </div>
           </fieldset>
         </form>
       </div>
