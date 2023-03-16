@@ -104,7 +104,7 @@
   overflow: hidden;
 }
 
-.height-full {
+.hight-full {
   height: 100%;
 }
 
@@ -153,9 +153,7 @@ h1 {
   padding: 0;
   margin: 0;
   padding-bottom: -10px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+ text-align: center;
 }
 
 h2 {
@@ -180,7 +178,7 @@ h2 {
   top: 0;
   width: 100%;
   z-index: 1; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
-  float: right;
+  /*float: right;*/
 }
 
 li {
@@ -297,7 +295,7 @@ h3 {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 20px;
-    padding: 10px;
+    padding: 5px;
     display: block;
     text-align: left;
     margin-bottom: 50px;
@@ -354,6 +352,8 @@ input[type=text], input[type=email], select, textarea {
       margin: .4rem;
   }
 
+
+
   
   /* PRODUCTS */ 
 
@@ -408,4 +408,3 @@ input[type=text], input[type=email], select, textarea {
     font-weight: bold;
     margin-bottom: 0;
   }
-  
