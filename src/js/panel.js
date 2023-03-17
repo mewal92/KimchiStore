@@ -1,24 +1,29 @@
-function panel(){
-    const header = document.querySelector("#panel");
-    
-    if(window.document.location.pathname === "/") {
-        window.document.location.pathname = "/index.html"
-    }
-    
-    header.innerHTML = `
+function panel() {
+  const header = document.querySelector("#panel");
+  const path = window.location.pathname;
+
+  if (path === "/") {
+    window.location.pathname = "/index.html";
+  }
+
+  header.innerHTML = `
     <nav class="nav">
-        <ul>
-          <li class=" ${window.document.location.pathname === "/kontakt.html" ? "text-black" : null }">
-            <a href="kontakt.html">Kontakt</a></li>
-          <li class=" ${window.document.location.pathname === "/produkter.html" ? "text-black" : null }">
-            <a href="produkter.html" >Produkter</a></li>
-          <li class=" ${window.document.location.pathname === "/order.html" ? "text-black" : null }">
-            <a href="order.html">Beställning</a></li>
-          <li class=" ${window.document.location.pathname === "/index.html" ? "text-black" : null }">
-            <a href="index.html" >Startsida</a></li>
-        </ul>
-      </nav>
-    `
+      <ul>
+        <li class="${path.includes("/kontakt.html") ? "active" : ""}">
+          <a href="kontakt.html">Kontakt</a>
+        </li>
+        <li class="${path.includes("/produkter.html") ? "active" : ""}">
+          <a href="produkter.html">Produkter</a>
+        </li>
+        <li class="${path.includes("/order.html") ? "active" : ""}">
+          <a href="order.html">Beställning</a>
+        </li>
+        <li class="${path.includes("/index.html") ? "active" : ""}">
+          <a href="index.html">Startsida</a>
+        </li>
+      </ul>
+    </nav>
+  `;
 }
 
 panel();

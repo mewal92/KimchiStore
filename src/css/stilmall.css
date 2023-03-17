@@ -206,10 +206,14 @@ li a:hover:not(.active) {
  background: rgba(120, 179, 255, 0.4); /* genomskinlig navigeringsmeny - kontakt*/
 }
   .active {
- background: rgb(1, 0, 0); 
+ background: rgb(120, 179, 255, 0.4); 
 }
 .active:hover {
   background: rgba(120, 179, 255, 0.4); /* när man hovrar över */
+}
+
+.nav li.active a {
+  background: rgb(120, 179, 255, 0.4); 
 }
 
 /* text och container för startsida */
