@@ -12,10 +12,12 @@ search.addEventListener('keyup', (e) =>{
         searchDrop.innerHTML = "";
     } else {
         searchDrop.innerHTML = "";
+        let count = 0;
         list.forEach((e) =>{
         let word = e.toLowerCase();
         let searchWord = search.value.toLowerCase();
-        if(word.includes(searchWord)){
+        if(word.includes(searchWord) && count > 11){
+            count++
             let element = document.createElement("span");
             element.classList.add("searchResult");
             element.innerText = e;
