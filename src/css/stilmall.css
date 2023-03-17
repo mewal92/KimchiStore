@@ -207,6 +207,7 @@ li a:hover:not(.active) {
 }
   .active {
  background: rgb(120, 179, 255, 0.4); 
+
 }
 .active:hover {
   background: rgba(120, 179, 255, 0.4); /* när man hovrar över */
