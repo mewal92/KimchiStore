@@ -10,7 +10,7 @@ function getAllProducts(){
 			  <h3>${product.title}</h3>
 			  <img src="${product.image}" alt="${product.title}">
 			  <p>${product.description}</p>
-			  <p>${product.price}</p>
+			  <p>${product.price} €</p>
 			`;
             productsContainer.appendChild(productElement);
           });

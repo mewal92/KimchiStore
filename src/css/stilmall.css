@@ -84,8 +84,8 @@
   width: 100%;
 }
 
-.width-47 {
-  width: 47.4%;
+.width-50 {
+  width: 50%;
 }
 
 .width-90 {
@@ -175,41 +175,70 @@ h2 {
     text-align: left;
     padding: 20px;
     margin-top: 2%;
-    box-sizing: border-box;
 }
 
 form.example input[type=text] {
-  padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
-  width: 40%;
   background: #f1f1f1;
-  float: left;
-
 }
 
 form.example button {
-  float: left;
   width:15%;
-  margin-top: 5px;
-  padding: 10px;
+  height: 42px;
+  line-height: 42px;
   background: #2196F3;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
   border-left: none;
   cursor: pointer;
-
+  border-radius: 3px;
 }
 
 form.example button:hover {
   background: #0b7dda;
 }
 
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
+.example {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.searchInput {
+  width: 100%;
+  height: 42px;
+  position: relative;
+}
+
+.searchInput input {
+  width: 100%;
+  height: 100%;
+}
+
+.searchDropdown {
+  position: static;
+  width: 100%;
+  left: 0;
+  bottom: -42px;
+  background-color: #fff;
+  border-radius: 0 0 3px 3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  flex-direction: column;
+}
+
+.searchDropdown span {
+  line-height: 42px;
+  display: block;
+  padding-left: 8px;
+
+}
+
+.searchDropdown span:hover {
+  cursor: pointer;
+  background-color: #79bdf2;
 }
 
 #categoryhead {
@@ -230,7 +259,6 @@ form.example::after {
 }
    #topproducts div {
     background-color: white;
-    box-sizing: border-box;
     width: calc(20% - 20px); /* adjust the width and margin as needed */
     margin: 10px;
     border: 1px solid #ccc;
@@ -396,7 +424,6 @@ h3 {
 
 input[type=text], input[type=email], select, textarea {
   display: inline-block;
-  width: 90%; 
   padding: 11px;
   border: 1px solid #000000; 
   border-radius: 3px; /*rundade kanter */
@@ -432,10 +459,6 @@ input[type=text], input[type=email], select, textarea {
   }
   
   /* här ska personen själv skriva in */
-  input {
-    margin: 5px;
-    padding: 5px;
-  }
   
   .output {
       font: 1rem 'Fira Sans', sans-serif;
@@ -467,7 +490,6 @@ input[type=text], input[type=email], select, textarea {
   /* produkt elementen */
   #products div {
     background-color: white;
-    box-sizing: border-box;
     width: calc(33.33% - 20px); /* adjust the width and margin as needed */
     margin: 10px;
     border: 1px solid #ccc;
@@ -501,3 +523,4 @@ input[type=text], input[type=email], select, textarea {
     font-weight: bold;
     margin-bottom: 0;
   }
+
