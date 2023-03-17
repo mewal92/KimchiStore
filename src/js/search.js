@@ -1,5 +1,4 @@
 import list from "./fetchcount.js";
-//let testList = ["brun", "blå", "gul"];
 
 const searchResult = document.querySelectorAll(".searchResult");
 const search = document.querySelector("#search");
