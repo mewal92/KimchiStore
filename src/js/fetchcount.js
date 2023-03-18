@@ -7,6 +7,9 @@ function getProductsByCount(){
         .then((data) => {
             data.forEach(element => {
                 productList.push(element.title)
+                if(!productList.includes(element.category)){
+                    productList.push(element.category)
+                }
             });
             data.sort((a, b) => {
                 return b.rating.count - a.rating.count
@@ -24,18 +27,18 @@ function getProductsByCount(){
         .catch((error) => console.error(error));
 }
 
-function getProductsCategory(){
-    fetch("https://fakestoreapi.com/products/categories")
-        .then((response) => response.json())
-        .then((data) => {
-            data.forEach(element => {
-                productList.push(element)
-            });
-        })
-        .catch((error) => console.error(error));
-}
+// function getProductsCategory(){
+//     fetch("https://fakestoreapi.com/products/categories")
+//         .then((response) => response.json())
+//         .then((data) => {
+//             data.forEach(element => {
+//                 productList.push(element)
+//             });
+//         })
+//         .catch((error) => console.error(error));
+// }
 
 getProductsByCount();
-getProductsCategory();
+//getProductsCategory();
 
 export default productList;
