@@ -175,6 +175,7 @@ h2 {
     text-align: left;
     padding: 20px;
     margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 form.example input[type=text] {
@@ -288,6 +289,22 @@ form.example button:hover {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0;
+  }
+
+  .info {
+    background-color: #ffffff99;
+    margin-bottom: 4%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 4%;
+
+  }
+
+  input[type=pren],[type=prenbutt]{
+height: 10%;
   }
 
 
