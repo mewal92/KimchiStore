@@ -51,13 +51,13 @@
               <input type="text" id="address" name="adress" />
               <p id="address-ermsg" class="yellow">Obligatoriskt fält</p>
 
-              <div class="flex flex-row">
-                <div class="flex flex-col width-47">
+              <div class="flex flex-row gap-6px">
+                <div class="flex flex-col width-50 gap-6px">
                   <label for="postnr">Postnummer</label>
-                  <input type="text" id="postnr" name="postnr" />
+                  <input maxlength="6" type="text" id="postnr" name="postnr" />
                   <p id="postnr-ermsg" class="yellow">Obligatoriskt fält</p>
                 </div>
-                <div class="flex flex-col width-47">
+                <div class="flex flex-col width-50 gap-6px">
                   <label for="ort">Ort</label>
                   <input type="text" id="ort" name="ort" />
                   <p id="ort-ermsg" class="yellow">Obligatoriskt fält</p>
@@ -69,21 +69,7 @@
               Vilken produkt vill du beställa?
             </legend>
             <div class="gap-16px">
-              <!-- här kan användaren välja att markera vad dom vill boka -->
-              <label for="fname">Produkt 1</label>
-              <input type="radio" id="Produkt1" name="Meny" /><br />
-
-              <label for="fname">Produkt 2</label>
-              <input type="radio" id="Produkt2" name="Meny" /><br />
-
-              <label for="fname">Produkt 3</label>
-              <input type="radio" id="Produkt3" name="Meny" /><br />
-
-              <label for="fname">Produkt 4</label>
-              <input type="radio" id="Produkt4" name="Meny" /><br />
-
-              <br />
-          
+              <button type="submit" class="hidden" id="submit"></button>
             </div>
           </fieldset>
         </form>

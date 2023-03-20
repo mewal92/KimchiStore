@@ -1,4 +1,4 @@
-//document.getElementById("submit").classList.add('hiddem');
+document.getElementById("submit").classList.add('hidden');
 
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
@@ -50,8 +50,6 @@ addressInput.addEventListener('input', (e) =>{
 });
 
 postnrInput.addEventListener('keyup', (e) =>{
-    console.log(e.key);
- 
     correctPostnr = symbolRangeWithRegX(postnrInput,
         "postnr-ermsg",
         /^[0-9]{3}\s?[0-9]{2}$/,
@@ -61,7 +59,7 @@ postnrInput.addEventListener('keyup', (e) =>{
             postnrInput.value = postnrInput.value + " ";
         } else if (postnrInput.value.length == 4 && e.key == "Backspace"){
             postnrInput.value = postnrInput.value.substring(0,2);
-        } 
+        }
         submitField();
 });
 
