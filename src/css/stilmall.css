@@ -166,6 +166,18 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  display: block; 
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 25px;
+}
+
+
+
 /* STARTSIDA */
 .mainsection {
     background: rgba(255, 255, 255, 0.505); 
@@ -252,42 +264,55 @@ form.example button:hover {
   letter-spacing: 15px;
 }
 
+
 #topproducts{
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
 }
    #topproducts div {
-    background-color: white;
-    width: calc(20% - 20px); /* adjust the width and margin as needed */
-    margin: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+    border-radius: 15px;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .img-header{
+    display: flex;
+    justify-content: center;
+    aspect-ratio: 16/9;
+    overflow: hidden;
   }
   
   /* rubriker för produkter */
-  #topproducts div h2 {
-    color:#000;
+  #topproducts div h3 {
     font-family: 'Sen', sans-serif;
-    font-size: 18px;
-    margin-top: 0;
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
   }
   
   /* produkt bilder */
   #topproducts div img {
-    max-width: 60%;
-    height: auto;
+    max-width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
   }
   
   
   /* produkt pris */
-  #topproducts div p:nth-of-type(2) {
+  #topproducts .price {
+    text-align: center;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 0;
+    bottom: 0;
   }
 
 
@@ -385,16 +410,6 @@ h4 {
   font-family: 'Tahoma', sans-serif;
 }
 
-h3 {
-  display: block; 
-  color: black;
-  text-align: center;
-  padding: 10px;
-  text-decoration: none;
-  font-family: 'Tahoma', sans-serif;
-  font-size: 25px;
-}
-
 .flex-containerkontakt {
   background: rgba(255, 255, 255, 0.4); 
   float: center;
@@ -474,12 +489,7 @@ input[type=text], input[type=email], select, textarea {
   /* PRODUCTS */ 
 
   /*rubriker för saker*/
-  h3{
-    float:left;
-    font-size: 12px;
-    font-family: 'Karla', sans-serif;
-    color: darkgrey;
-  }
+  
 
 /*produkt container*/
 #products {
@@ -505,8 +515,8 @@ input[type=text], input[type=email], select, textarea {
   
   /* rubriker för produkter */
   #products div h3 {
+    font-family: 'Sen', sans-serif;
     width: 100%;
-    font-family: cursive;
     margin: 0 0 10px 0;
     font-size: 1.1rem;
     letter-spacing: 0.04em;

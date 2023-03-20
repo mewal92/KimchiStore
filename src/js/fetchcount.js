@@ -16,10 +16,16 @@ function getProductsByCount(){
             });
             for (let i = 0; i < 10; i++){
                 document.getElementById("topproducts").innerHTML += `
+                
                 <div>
-			    <h3>${data[i].title}</h3>
-			    <img src="${data[i].image}" alt="${data[i].title}">
-			    <p>${data[i].price} €</p>
+                    <figure class="img-header">
+			            <img src="${data[i].image}" alt="${data[i].title}">
+                    </figure>
+        
+                    <article class="product-body">
+                        <h3>${data[i].title}</h3>
+			            <p class="price">${data[i].price}:-</p>
+                    </article>
                 </div>
 			`;
             }
