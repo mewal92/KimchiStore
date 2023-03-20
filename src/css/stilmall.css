@@ -84,8 +84,8 @@
   width: 100%;
 }
 
-.width-47 {
-  width: 47.4%;
+.width-50 {
+  width: 50%;
 }
 
 .width-90 {
@@ -147,9 +147,9 @@ header {
 }
 
 h1 {
-    color:rgba(1, 0, 0, 0.537);
+    color:rgba(24, 22, 50, 0.463);
   font-size: 100px;
-  font-family: 'Tahoma', sans-serif;
+  font-family: 'Sen', sans-serif;
   padding: 0;
   margin: 0;
   padding-bottom: -10px;
@@ -165,6 +165,130 @@ h2 {
   margin: 0;
   text-align: center;
 }
+
+/* STARTSIDA */
+.mainsection {
+    background: rgba(255, 255, 255, 0.505); 
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    text-align: left;
+    padding: 20px;
+    margin-top: 2%;
+}
+
+form.example input[type=text] {
+  font-size: 17px;
+  border: 1px solid grey;
+  background: #f1f1f1;
+}
+
+form.example button {
+  width:15%;
+  height: 42px;
+  line-height: 42px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.searchInput {
+  width: 100%;
+  height: 42px;
+  position: relative;
+}
+
+.searchInput input {
+  width: 100%;
+  height: 100%;
+}
+
+.searchDropdown {
+  position: static;
+  width: 100%;
+  left: 0;
+  bottom: -42px;
+  background-color: #fff;
+  border-radius: 0 0 3px 3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  flex-direction: column;
+}
+
+.searchDropdown span {
+  line-height: 42px;
+  display: block;
+  padding-left: 8px;
+
+}
+
+.searchDropdown span:hover {
+  cursor: pointer;
+  background-color: #79bdf2;
+}
+
+#categoryhead {
+  background-color: #ffffff83;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Sen', sans-serif;
+  color: rgb(71, 71, 107);
+  letter-spacing: 15px;
+}
+
+#topproducts{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+   #topproducts div {
+    background-color: white;
+    width: calc(20% - 20px); /* adjust the width and margin as needed */
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* rubriker för produkter */
+  #topproducts div h2 {
+    color:#000;
+    font-family: 'Sen', sans-serif;
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  /* produkt bilder */
+  #topproducts div img {
+    max-width: 60%;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  /* produkt pris */
+  #topproducts div p:nth-of-type(2) {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
 
 
 /* navigerings listan längst upp*/
@@ -230,15 +354,6 @@ h6 {
   padding-bottom: -30px;
 }
 
-.flex-container {
-  background: rgba(255, 255, 255, 0.3); 
-  float: center;
-  width: 700px;
-  height: 200px;
-  margin-top: 0px;
-  margin-left: 250px;
-}
-
 
 /* footer */
 .footer {
@@ -292,6 +407,7 @@ h3 {
 }
 
 
+
 /*BESTÄLLNINGSSIDA */ 
 
 .flex-containerbeställning {
@@ -308,7 +424,6 @@ h3 {
 
 input[type=text], input[type=email], select, textarea {
   display: inline-block;
-  width: 90%; 
   padding: 11px;
   border: 1px solid #000000; 
   border-radius: 3px; /*rundade kanter */
@@ -344,10 +459,6 @@ input[type=text], input[type=email], select, textarea {
   }
   
   /* här ska personen själv skriva in */
-  input {
-    margin: 5px;
-    padding: 5px;
-  }
   
   .output {
       font: 1rem 'Fira Sans', sans-serif;
@@ -379,7 +490,6 @@ input[type=text], input[type=email], select, textarea {
   /* produkt elementen */
   #products div {
     background-color: white;
-    box-sizing: border-box;
     width: calc(33.33% - 20px); /* adjust the width and margin as needed */
     margin: 10px;
     border: 1px solid #ccc;
@@ -413,3 +523,4 @@ input[type=text], input[type=email], select, textarea {
     font-weight: bold;
     margin-bottom: 0;
   }
+
