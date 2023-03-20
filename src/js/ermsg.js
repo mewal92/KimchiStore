@@ -113,8 +113,6 @@ function symbolRange(tag, pID, message){
     }
 }
 
-// .preventDefault
-
 function submitField(){
     document.getElementById("submit").classList.add('hidden');
     if (correctName &&
