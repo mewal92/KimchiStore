@@ -12,11 +12,10 @@ function getAllProducts(){
 			    <img src="${product.image}" alt="${product.title}">
         </figure>
         
-        <div class="product-body">
+        <article class="product-body">
           <h3>${product.title}</h3>
-			    <p>${product.description}</p>
-			    <p>${product.price}</p>
-        </div>
+			    <p class="price">${product.price}:-</p>
+        </article>
 			`;
             productsContainer.appendChild(productElement);
           });
