@@ -405,6 +405,13 @@ h3 {
   display: block;
   text-align: center;
 }
+  input[type=textcontact], textarea {
+width: 50%;
+float: center;
+padding: 10px;
+margin: 10px;
+  }
+
 
 
 
