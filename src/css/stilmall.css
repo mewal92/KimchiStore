@@ -220,6 +220,7 @@ form.example button:hover {
 }
 
 .searchInput {
+  z-index: 3;
   width: 100%;
   height: 42px;
   position: relative;
@@ -276,6 +277,7 @@ form.example button:hover {
   gap: 25px;
 }
    #topproducts div {
+    position: relative;
     border-radius: 15px;
     background: #fff;
     transform-origin: center;
@@ -288,7 +290,7 @@ form.example button:hover {
   #topproducts .img-header{
     display: flex;
     justify-content: center;
-    aspect-ratio: 16/14;
+    aspect-ratio: 16/9;
     overflow: hidden;
   }
   
@@ -306,14 +308,22 @@ form.example button:hover {
     max-width: 100%;
     padding: 10px;
   }
+
+  #topproducts .product-body{
+    padding: 10px;
+  }
   
   
   /* produkt pris */
   #topproducts .price {
+    position: absolute;
     text-align: center;
+    margin-bottom: 5px;
     font-size: 16px;
     font-weight: bold;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #topproducts div:hover {
@@ -333,7 +343,7 @@ form.example button:hover {
   position: fixed; /* ska sitta fast vid toppen */
   top: 0;
   width: 100%;
-  z-index: 1; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
+  z-index: 2; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
   /*float: right;*/
 }
 
@@ -397,11 +407,12 @@ h6 {
   margin-left: 0px;
   margin-right:0px;
   margin-top: 0px;
-    position: fixed;
-   bottom: 0;
-   color: white;
-   padding-bottom: 15px;
-   padding-top: 15px;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  z-index: 2;
 }
 
 
@@ -512,6 +523,7 @@ input[type=text], input[type=email], select, textarea {
   
   /* produkt elementen */
   #products div {
+    position: relative;
     border-radius: 15px;
     background: #fff;
     transform-origin: center;
@@ -549,10 +561,14 @@ input[type=text], input[type=email], select, textarea {
   
   /* produkt pris */
   .price{
+    position: absolute;
     text-align: center;
     font-size: 16px;
+    margin-bottom: 20px;
     font-weight: bold;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #products div:hover {
