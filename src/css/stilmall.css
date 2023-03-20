@@ -7,6 +7,10 @@
   font-family: "Manrope", sans-serif;
 }
 
+.margin-top {
+  margin-top: 1rem;
+}
+
 .text-black {
   color: #000;
 }
