@@ -27,18 +27,8 @@ function getProductsByCount(){
         .catch((error) => console.error(error));
 }
 
-// function getProductsCategory(){
-//     fetch("https://fakestoreapi.com/products/categories")
-//         .then((response) => response.json())
-//         .then((data) => {
-//             data.forEach(element => {
-//                 productList.push(element)
-//             });
-//         })
-//         .catch((error) => console.error(error));
-// }
+
 
 getProductsByCount();
-//getProductsCategory();
 
 export default productList;
