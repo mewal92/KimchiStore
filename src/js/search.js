@@ -46,10 +46,10 @@ function searchEventStatic(searchWord, id){
         searchWord == "men's clothing" ||
         searchWord == "women's clothing"){
             window.sessionStorage.setItem("category",searchWord);
-            window.location.replace("produkter.html");
+            window.document.location = "produkter.html";
         } else {
             window.sessionStorage.setItem("productID", id);
-            //window.location.replace("product-info.html");
+            window.document.location = "product-info.html";
         }
     }
 }
@@ -61,7 +61,7 @@ function searchEvent(searchWord){
         searchWord == "men's clothing" ||
         searchWord == "women's clothing"){
             window.sessionStorage.setItem("category",searchWord);
-            window.location.replace("produkter.html");
+            window.document.location = "produkter.html";
         } else {
             let productIDList = [];
             let matchWholeWord = false;
@@ -76,13 +76,15 @@ function searchEvent(searchWord){
                 }
             })
             if(matchWholeWord){
-                //window.location.replace("product-info.html");
+                //window.document.location("product-info.html");
+                //?id=
+                window.document.location = "product-info.html";
             } else if (productIDList.length == 1){
                 window.sessionStorage.setItem("productID", productIDList[0]);
-                //window.location.replace("product-info.html");
+                window.document.location = "product-info.html";
             } else if (productIDList.length > 1){
                 window.sessionStorage.setItem("productIDList", productIDList);
-                window.location.replace("produkter.html");
+                window.document.location = "produkter.html";
             }
         }
     }
