@@ -7,7 +7,6 @@ function getAllProducts(){
           data.forEach((product) => {
             const productElement = document.createElement("div");
             productElement.innerHTML = `
-			  
         <figure class="img-header">
 			    <img src="${product.image}" alt="${product.title}">
         </figure>
