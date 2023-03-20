@@ -282,12 +282,13 @@ form.example button:hover {
     transition: all 0.4s ease-in-out;
     overflow: hidden;
     height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
 
-  .img-header{
+  #topproducts .img-header{
     display: flex;
     justify-content: center;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/14;
     overflow: hidden;
   }
   
@@ -313,6 +314,12 @@ form.example button:hover {
     font-size: 16px;
     font-weight: bold;
     bottom: 0;
+  }
+
+  #topproducts div:hover {
+    scale: 1.1;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
 
@@ -511,6 +518,7 @@ input[type=text], input[type=email], select, textarea {
     transition: all 0.4s ease-in-out;
     overflow: hidden;
     height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
   
   /* rubriker för produkter */
@@ -550,5 +558,5 @@ input[type=text], input[type=email], select, textarea {
   #products div:hover {
   scale: 1.1;
   z-index: 1;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
