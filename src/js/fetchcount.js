@@ -1,18 +1,14 @@
-
 let productList = [];
 
-function getProductsByCount(){
+async function getProductsByCount(){
     fetch("https://fakestoreapi.com/products")
         .then((response) => response.json())
         .then((data) => {
             data.forEach(element => {
-                productList.push(element.title)
-                if(!productList.includes(element.category)){
-                    productList.push(element.category)
-                }
+                productList.push(element.title + "/" + element.id);
             });
             data.sort((a, b) => {
-                return b.rating.count - a.rating.count
+                return b.rating.count - a.rating.count;
             });
             for (let i = 0; i < 10; i++){
                 document.getElementById("topproducts").innerHTML += `
@@ -27,8 +23,8 @@ function getProductsByCount(){
         .catch((error) => console.error(error));
 }
 
-
-
 getProductsByCount();
+
+productList.push("electronics/1","men's clothing/1","women's clothing/1", "jewelery/1");
 
 export default productList;
