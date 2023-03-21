@@ -1,21 +1,39 @@
 import Product from "./product.js";
-const productsContainer = document.getElementById("products");
-
+const productsContainer = document.querySelector("#products");
+let product;
+let test = [];
 if (window.sessionStorage.getItem("productID") == null){
     window.location.replace("index.html");
-    
 } else {
     const id = window.sessionStorage.getItem("productID");
-    getProductById(id)
+    getProductById(id);
+    const orderButton = document.querySelector("#ORDER");
+    orderButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(window.localStorage.getItem("product")){
+        window.localStorage.removeItem("product");
+        window.localStorage.setItem("product", JSON.stringify(product));
+      } else {
+        window.localStorage.setItem("product", JSON.stringify(product));
+      }
+      console.log(JSON.stringify(product));
+      window.document.location = "order.html";
+    })
 }
 
 async function getProductById(id){
     fetch(`https://fakestoreapi.com/products/${id}`)
     .then((response) => response.json())
     .then((data) => {
-        productsContainer.innerHTML = new Product(
+        product = new Product(
           data.id, data.title, data.price, data.category, data.description, data.image
-        ).toHTMLDetail();
+        );
+        productsContainer.innerHTML = product.toHTMLDetail();
+        console.log(product);
+        test.push(new Product(
+          data.id, data.title, data.price, data.category, data.description, data.image
+        ));
     })
     .catch((error) => console.error(error));
 }
+console.log(test[0]);
