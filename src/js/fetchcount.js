@@ -26,7 +26,4 @@ async function getProductsByCount(){
 }
 
 getProductsByCount();
-
-//productList.push("electronics/1","men's clothing/1","women's clothing/1", "jewelery/1");
-
 export default productList;

@@ -36,4 +36,15 @@ export default class Product {
         </div>
       `;
     }
+
+    toHTMLOrder(){
+        return `
+        <div class="felx flex-row">
+            <img src="${this.imageURL}" alt="${this.title}">
+            <p>${this.title}</p>
+            <p class="price">${this.description}</p>
+            <p class="price">${this.price} €</p>
+        </div>
+      `;
+    }
 }
