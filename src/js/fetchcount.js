@@ -1,3 +1,5 @@
+import Product from "./product.js";
+
 let productList = [];
 
 async function getProductsByCount(){
@@ -5,7 +7,7 @@ async function getProductsByCount(){
         .then((response) => response.json())
         .then((data) => {
             data.forEach(element => {
-                productList.push(element.title + "/" + element.id);
+                productList.push(new Product(element.id, element.title, element.price, element.category, element.description, element.image));
             });
             data.sort((a, b) => {
                 return b.rating.count - a.rating.count;
@@ -25,6 +27,6 @@ async function getProductsByCount(){
 
 getProductsByCount();
 
-productList.push("electronics/1","men's clothing/1","women's clothing/1", "jewelery/1");
+//productList.push("electronics/1","men's clothing/1","women's clothing/1", "jewelery/1");
 
 export default productList;

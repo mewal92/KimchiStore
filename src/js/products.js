@@ -1,3 +1,5 @@
+import Product from "./product.js";
+
 const productsContainer = document.getElementById("products");
 
 let idList = [];
@@ -16,20 +18,20 @@ function getAllProducts(){
           if(window.sessionStorage.getItem("category") != null){
             data.forEach((product) => {
               if(product.category == window.sessionStorage.getItem("category")){
-                printHTML(product.image, product.title, product.price);
+                printHTML(new Product(product.id, product.title, product.price, product.category, product.description, product.image));
               }
             });
           } else if (idList.length > 0){
             data.forEach((product) => {
               idList.forEach(e =>{
                 if(product.id == e){
-                  printHTML(product.image, product.title, product.price);
+                  printHTML(new Product(product.id, product.title, product.price, product.category, product.description, product.image));
                 }
               })
             });
           } else {
             data.forEach((product) => {
-              printHTML(product.image, product.title, product.price);
+              printHTML(new Product(product.id, product.title, product.price, product.category, product.description, product.image));
             });
           }
           window.sessionStorage.removeItem("category");
@@ -38,18 +40,8 @@ function getAllProducts(){
         .catch((error) => console.error(error));
 }
 
-function printHTML(imgaURL, title, price){
-  productsContainer.innerHTML += `
-    <div>
-      <figure class="img-header">
-        <img src="${imgaURL}" alt="${title}">
-      </figure>
-      <article class="product-body">
-        <h3>${title}</h3>
-        <p class="price">${price} €</p>
-      </article>
-    </div>
-  `;
+function printHTML(product){
+  productsContainer.innerHTML += product.toHTMLDisplay();
 }
 
 getAllProducts();
