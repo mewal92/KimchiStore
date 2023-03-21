@@ -1,3 +1,4 @@
+import Product from "./product.js";
 const productsContainer = document.getElementById("products");
 
 if (window.sessionStorage.getItem("productID") == null){
@@ -12,18 +13,9 @@ async function getProductById(id){
     fetch(`https://fakestoreapi.com/products/${id}`)
     .then((response) => response.json())
     .then((data) => {
-        productsContainer.innerHTML = `
-        <div>
-          <figure class="img-header">
-            <img src="${data.image}" alt="${data.title}">
-          </figure>
-          <article class="product-body">
-            <h3>${data.title}</h3>
-            <p class="price">${data.description}</p>
-            <p class="margin-top price">${data.price} €</p>
-          </article>
-        </div>
-      `;
+        productsContainer.innerHTML = new Product(
+          data.id, data.title, data.price, data.category, data.description, data.image
+        ).toHTMLDetail();
     })
     .catch((error) => console.error(error));
 }
