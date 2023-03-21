@@ -26,5 +26,4 @@ async function getProductsByCount(){
 }
 
 getProductsByCount();
-
 export default productList;

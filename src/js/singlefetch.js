@@ -1,7 +1,9 @@
 import Product from "./product.js";
+
 const productsContainer = document.querySelector("#products");
+
 let product;
-let test = [];
+
 if (window.sessionStorage.getItem("productID") == null){
     window.location.replace("index.html");
 } else {
@@ -16,7 +18,6 @@ if (window.sessionStorage.getItem("productID") == null){
       } else {
         window.localStorage.setItem("product", JSON.stringify(product));
       }
-      console.log(JSON.stringify(product));
       window.document.location = "order.html";
     })
 }
@@ -29,11 +30,6 @@ async function getProductById(id){
           data.id, data.title, data.price, data.category, data.description, data.image
         );
         productsContainer.innerHTML = product.toHTMLDetail();
-        console.log(product);
-        test.push(new Product(
-          data.id, data.title, data.price, data.category, data.description, data.image
-        ));
     })
     .catch((error) => console.error(error));
 }
-console.log(test[0]);

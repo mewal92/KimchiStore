@@ -1,11 +1,38 @@
+import Product from "./product.js";
+import Customer from "./customer.js";
+
+if(window.localStorage.getItem("product")){
+    let product = new Product(JSON.parse(window.localStorage.getItem("product")).id,
+    JSON.parse(window.localStorage.getItem("product")).title,
+    JSON.parse(window.localStorage.getItem("product")).price,
+    JSON.parse(window.localStorage.getItem("product")).category,
+    JSON.parse(window.localStorage.getItem("product")).description,
+    JSON.parse(window.localStorage.getItem("product")).imageURL);
+    const order = document.querySelector('#orders');
+    order.innerHTML = product.toHTMLOrder();
+    const remove = document.querySelector('#remove');
+    const totalPrice = document.querySelector('#totprice');
+    totalPrice.innerHTML = product.price + " €";
+    remove.classList.remove("hidden");
+    remove.addEventListener('click', e =>{
+        e.preventDefault();
+        order.innerHTML = null;
+        totalPrice.innerHTML = null;
+        window.localStorage.removeItem("product");
+        remove.classList.add("hidden");
+    })
+}
+
 document.getElementById("submit").classList.add('hidden');
 
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const telInput = document.getElementById("tel");
-const addressInput = document.getElementById("address");
-const postnrInput = document.getElementById("postnr");
-const ortInput = document.getElementById("ort");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const telInput = document.querySelector("#tel");
+const addressInput = document.querySelector("#address");
+const postnrInput = document.querySelector("#postnr");
+const ortInput = document.querySelector("#ort");
+
+const submit = document.querySelector("#submit");
 
 nameInput.value = "";
 emailInput.value = "";
@@ -20,6 +47,19 @@ let correctTel = false;
 let correctAddress = false;
 let correctPostnr = false;
 let correctOrt = false;
+
+submit.addEventListener('click', e =>{
+    e.preventDefault();
+    window.sessionStorage.setItem("customer", JSON.stringify(
+        new Customer(nameInput.value,
+            emailInput.value,
+            telInput.value,
+            addressInput.value,
+            postnrInput.value,
+            ortInput.value)
+    ))
+    window.document.location = "action-page.html";
+})
 
 nameInput.addEventListener('input', (e) =>{
     correctName = symbolRange(nameInput, "name-ermsg", "Behöver 2-50 bokstäver");
@@ -120,7 +160,7 @@ function submitField(){
         correctTel &&
         correctAddress &&
         correctPostnr &&
-        correctOrt){
+        correctOrt && window.localStorage.getItem("product")){
         document.getElementById("submit").classList.remove('hidden');
     }
 }

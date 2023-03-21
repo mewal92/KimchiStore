@@ -41,7 +41,7 @@ submitButton.addEventListener('click', (e) =>{
 function searchEventStatic(searchWord, id){
     if(!searchWord == "" || !searchWord == null){
         window.sessionStorage.setItem("productID", id);
-        window.document.location = "product-info.html";
+        window.document.location = "product-info.html?id=" + id;
     }
 }
 
@@ -59,12 +59,12 @@ function searchEvent(searchWord){
             }
         })
         if(matchWholeWord){
-            window.document.location = "product-info.html";
+            window.document.location = "product-info.html?id=" + id;
         } else if (productIDList.length == 1){
-            window.sessionStorage.setItem("productID", productIDList[0]);
-            window.document.location = "product-info.html";
+            window.sessionStorage.setItem("productID", JSON.stringify(productIDList));
+            window.document.location = "product-info.html?id=" + id;
         } else if (productIDList.length > 1){
-            window.sessionStorage.setItem("productIDList", productIDList);
+            window.sessionStorage.setItem("productIDList", JSON.stringify(productIDList));
             window.document.location = "produkter.html";
         }
     }

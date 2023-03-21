@@ -2,14 +2,7 @@ import Product from "./product.js";
 
 const productsContainer = document.getElementById("products");
 
-let idList = [];
-
-if(window.sessionStorage.getItem("productIDList") != null){
-  idList = window.sessionStorage.getItem("productIDList").split(",");
-  idList.forEach(e =>{
-    console.log(e);
-  })
-}
+let idList = JSON.parse(window.sessionStorage.getItem("productIDList"));
 
 function getAllProducts(){
     fetch("https://fakestoreapi.com/products")
