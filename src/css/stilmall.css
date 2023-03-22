@@ -177,6 +177,16 @@ h3 {
   font-size: 25px;
 }
 
+/*Används på kontakt*/
+h4 {
+  display: block; 
+  color: black;
+  text-align: center;
+  padding: 0px;
+  text-decoration: none;
+  font-family: 'Tahoma', sans-serif;
+}
+
 
 
 /* STARTSIDA */
@@ -248,7 +258,6 @@ form.example button:hover {
   line-height: 42px;
   display: block;
   padding-left: 8px;
-
 }
 
 .searchDropdown span:hover {
@@ -427,19 +436,6 @@ li a:hover:not(.active) {
   z-index: 2;
 }
 
-
-
-/* KONTAKT */
-
-h4 {
-  display: block; 
-  color: black;
-  text-align: center;
-  padding: 0px;
-  text-decoration: none;
-  font-family: 'Tahoma', sans-serif;
-}
-
 .flex-containerkontakt {
   background: rgba(255, 255, 255, 0.4); 
   float: center;
@@ -504,7 +500,7 @@ input[type=text], input[type=email], select, textarea {
   padding: 5px 10px;
 }
   
-  /* här ska personen själv skriva in */
+/* här ska personen själv skriva in */
   
 .output {
   font: 1rem 'Fira Sans', sans-serif;
