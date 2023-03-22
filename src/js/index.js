@@ -1,9 +1,37 @@
-import list from "./fetchcount.js";
+import Product from "./product.js";
 
 const search = document.querySelector("#search");
 search.value = "";
 
 const searchDrop = document.querySelector(".searchDropdown");
+const submitButton = document.querySelector("#submit");
+
+let productList = [];
+
+async function getProductsByCount(){
+    fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(element => {
+                productList.push(new Product(element.id, element.title, element.price, element.category, element.description, element.image));
+            });
+            data.sort((a, b) => {
+                return b.rating.count - a.rating.count;
+            });
+            for (let i = 0; i < 10; i++){
+                document.getElementById("topproducts").innerHTML += `
+                <div>
+			    <h3>${data[i].title}</h3>
+			    <img src="${data[i].image}" alt="${data[i].title}">
+			    <p>${data[i].price} €</p>
+                </div>
+			`;
+            }
+        })
+        .catch((error) => console.error(error));
+}
+
+getProductsByCount();
 
 search.addEventListener('keyup', (e) =>{
     if(search.value == "" || search.value == null){
@@ -11,7 +39,7 @@ search.addEventListener('keyup', (e) =>{
     } else {
         searchDrop.innerHTML = "";
         let count = 0;
-        list.forEach((e) =>{
+        productList.forEach((e) =>{
             let searchWord = search.value.toLowerCase().trim();
             if(e.title.trim().toLowerCase().includes(searchWord) || e.category.trim().toLowerCase().includes(searchWord) && count < 11){
                 count++
@@ -31,8 +59,6 @@ search.addEventListener('keyup', (e) =>{
     }
 });
 
-const submitButton = document.querySelector("#submit");
-
 submitButton.addEventListener('click', (e) =>{
     e.preventDefault();
     searchEvent(search.value.toLowerCase().trim());
@@ -49,7 +75,7 @@ function searchEvent(searchWord){
     if(!searchWord == "" || !searchWord == null){
         let productIDList = [];
         let matchWholeWord = false;
-        list.forEach(e =>{
+        productList.forEach(e =>{
             if(e.title.toLowerCase().trim() === searchWord){
                 window.sessionStorage.setItem("productID", e.id);
                 matchWholeWord = true

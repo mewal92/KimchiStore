@@ -2,17 +2,15 @@ import Product from "./product.js";
 import Customer from "./customer.js";
 
 if(window.localStorage.getItem("product")){
-    let product = new Product(JSON.parse(window.localStorage.getItem("product")).id,
-    JSON.parse(window.localStorage.getItem("product")).title,
-    JSON.parse(window.localStorage.getItem("product")).price,
-    JSON.parse(window.localStorage.getItem("product")).category,
-    JSON.parse(window.localStorage.getItem("product")).description,
-    JSON.parse(window.localStorage.getItem("product")).imageURL);
     const order = document.querySelector('#orders');
-    order.innerHTML = product.toHTMLOrder();
+    order.innerHTML = printProductHTML(
+        JSON.parse(window.localStorage.getItem("product")).imageURL,
+        JSON.parse(window.localStorage.getItem("product")).title,
+        JSON.parse(window.localStorage.getItem("product")).price
+    );
     const remove = document.querySelector('#remove');
     const totalPrice = document.querySelector('#totprice');
-    totalPrice.innerHTML = product.price + " €";
+    totalPrice.innerHTML = `Total ${JSON.parse(window.localStorage.getItem("product")).price} €`;
     remove.classList.remove("hidden");
     remove.addEventListener('click', e =>{
         e.preventDefault();
@@ -163,4 +161,13 @@ function submitField(){
         correctOrt && window.localStorage.getItem("product")){
         document.getElementById("submit").classList.remove('hidden');
     }
+}
+function printProductHTML(imageURL, title, price){
+    return `
+        <div class="felx flex-row">
+            <img src="${imageURL}" alt="${title}">
+            <p>${title}</p>
+            <p class="price">${price} €</p>
+        </div>
+      `;
 }

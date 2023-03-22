@@ -27,9 +27,33 @@ async function getProductById(id){
     .then((response) => response.json())
     .then((data) => {
         product = new Product(
-          data.id, data.title, data.price, data.category, data.description, data.image
+          data.id,
+          data.title,
+          data.price,
+          data.category,
+          data.description,
+          data.image
         );
-        productsContainer.innerHTML = product.toHTMLDetail();
+        productsContainer.innerHTML = printProductHTML(product.imageURL,
+          product.title,
+          product.description,
+          product.price
+          );
     })
     .catch((error) => console.error(error));
+}
+
+function printProductHTML(imageURL, title, description, price){
+  return `
+        <div>
+          <figure class="img-header">
+            <img src="${imageURL}" alt="${title}">
+          </figure>
+          <article class="product-body">
+            <h3>${title}</h3>
+            <p class="price">${description}</p>
+            <p class="margin-top price">${price} €</p>
+          </article>
+        </div>
+      `;
 }
