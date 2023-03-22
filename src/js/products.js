@@ -14,7 +14,7 @@ function getAllProducts(){
                 printHTML(new Product(product.id, product.title, product.price, product.category, product.description, product.image));
               }
             });
-          } else if (idList.length > 0){
+          } else if (idList){
             data.forEach((product) => {
               idList.forEach(e =>{
                 if(product.id == e){
