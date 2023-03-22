@@ -11,6 +11,11 @@ const searchDrop = document.querySelector(".searchDropdown");
 //Variabel till sök knappen
 const submitButton = document.querySelector("#submit");
 
+//const electronics = document.querySelector("#electronics");
+//const jewelery = document.querySelector("#jewelery");
+//const mens = document.querySelector("#mens");
+//const women = document.querySelector("#women");
+
 //Produkt lista
 let productList = [];
 
@@ -45,20 +50,6 @@ async function getProductsByCount(){
                     window.document.location = "product-info.html?id=" + data[i].id;
                 })
                 document.getElementById("topproducts").appendChild(div);
-
-
-
-            //     document.getElementById("topproducts").innerHTML += `
-            //     <div class="product-card">
-            //         <figure class="product-header">
-            //             <img src="${data[i].image}" alt="${data[i].title}">
-            //         </figure>
-            //         <article class="product-body">
-            //             <h3 class="product-title">${data[i].title}</h3>
-            //             <p class="price">${data[i].price}€</p>
-            //         </article>
-            //     </div>
-			// `;
             }
         })
         .catch((error) => console.error(error));
@@ -160,3 +151,31 @@ function searchEvent(searchWord){
         }
     }
 }
+
+/*
+electronics.addEventListener('click', e =>{
+    categoryEvent("electronics");
+})
+*/
+/*
+jewelery.addEventListener('click', e =>{
+    categoryEvent("jewelery");
+})
+*/
+/*
+mens.addEventListener('click', e =>{
+    categoryEvent("men's clothing");
+})
+*/
+/*
+electronics.addEventListener('click', e =>{
+    categoryEvent("women's clothing");
+})
+*/
+
+/*
+function getCategory(category){
+    window.sessionStorage.setItem("category", category);
+    window.document.location = "produkter.html";
+}
+*/
