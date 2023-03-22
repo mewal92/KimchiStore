@@ -1,3 +1,7 @@
+/*
+Skriver ut panelen högst upp samt footern längst ned
+ */
+
 function panel() {
     const header = document.querySelector("#panel");
     const path = window.location.pathname;

@@ -1,17 +1,29 @@
-import Product from "./product.js";
-import Customer from "./customer.js";
+import Product from "./product.js"; //Kommer att användas i framtiden med en cart
+import Customer from "./customer.js"; //laddar customer klassen
 
+/**
+ * om en produkt är vald kommer produktens
+ * bild, titel och pris visas längst ned
+ * samt en total pris på vald produkt. Detta kan sedan bli en sumering
+ * om man valt flera produkter
+ */
 if(window.localStorage.getItem("product")){
     const order = document.querySelector('#orders');
+    //metod som skriver ut html finns längst ned på denna sida
     order.innerHTML = printProductHTML(
         JSON.parse(window.localStorage.getItem("product")).imageURL,
         JSON.parse(window.localStorage.getItem("product")).title,
         JSON.parse(window.localStorage.getItem("product")).price
     );
+    //remove knapp om man vill ta bort den valda produkten
     const remove = document.querySelector('#remove');
     const totalPrice = document.querySelector('#totprice');
     totalPrice.innerHTML = `Total ${JSON.parse(window.localStorage.getItem("product")).price} €`;
+    //remove knappen görs synlig
     remove.classList.remove("hidden");
+    //Om knappen trycks tas info om produkten bort
+    //och localStorage nollställs
+    //knappen blir sen osynlig igen
     remove.addEventListener('click', e =>{
         e.preventDefault();
         order.innerHTML = null;
@@ -21,8 +33,10 @@ if(window.localStorage.getItem("product")){
     })
 }
 
+//Gör submit knapp osynlig från början som en säkerhetsgrej
 document.getElementById("submit").classList.add('hidden');
 
+//Variabler för diverse html input taggar
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const telInput = document.querySelector("#tel");
@@ -32,6 +46,7 @@ const ortInput = document.querySelector("#ort");
 
 const submit = document.querySelector("#submit");
 
+//Nollar alla värden i fälten
 nameInput.value = "";
 emailInput.value = "";
 telInput.value = "";
@@ -39,6 +54,7 @@ addressInput.value = "";
 postnrInput.value = "";
 ortInput.value = "";
 
+//bool som validerar om det som står i fälten är korrekt
 let correctName = false;
 let correctEmail = false;
 let correctTel = false;
@@ -46,6 +62,13 @@ let correctAddress = false;
 let correctPostnr = false;
 let correctOrt = false;
 
+//eventlyssnare på submit knapp
+/**
+ * Om en kund trycker submit
+ * hämtas all info från alla fält och skapar upp en
+ * customer obj som läggs i sessionStorage
+ * och användaren tas till action-page
+ */
 submit.addEventListener('click', e =>{
     e.preventDefault();
     window.sessionStorage.setItem("customer", JSON.stringify(
@@ -59,11 +82,16 @@ submit.addEventListener('click', e =>{
     window.document.location = "action-page.html";
 })
 
+//Event lyssnare som validerar om namenet är mellan 2-50 bokstäver
+//samt skriver ut real time info till användaren
 nameInput.addEventListener('input', (e) =>{
+    //metod som returnerar sant om användaren har skrivit 2-15 täcken
     correctName = symbolRange(nameInput, "name-ermsg", "Behöver 2-50 bokstäver");
+    //Kollar om alla fält är sanna 
     submitField();
 });
 
+//samma fast för email
 emailInput.addEventListener('input', (e) =>{
     correctEmail = symbolRangeWithRegX(emailInput,
         "email-ermsg",
@@ -73,6 +101,7 @@ emailInput.addEventListener('input', (e) =>{
         submitField();
 });
 
+//samma fast för telefon nr
 telInput.addEventListener('input', (e) =>{
     correctTel = symbolRangeWithRegX(telInput,
         "tel-ermsg",
@@ -82,30 +111,38 @@ telInput.addEventListener('input', (e) =>{
         submitField();
 });
 
+//samma fast för address
 addressInput.addEventListener('input', (e) =>{
     correctAddress = symbolRange(addressInput, "address-ermsg", "Behöver 2-50 bokstäver");
     submitField();
 });
 
+//samma fast för postnr
 postnrInput.addEventListener('keyup', (e) =>{
     correctPostnr = symbolRangeWithRegX(postnrInput,
         "postnr-ermsg",
         /^[0-9]{3}\s?[0-9]{2}$/,
         true,
         "Behöver ett postnummer format \"000 00\"");
+        //Om längden på det inmatade värdet är 3 lägg till ett space
         if(postnrInput.value.length == 3 && e.key != "Backspace"){
             postnrInput.value = postnrInput.value + " ";
+        //Om längden på värdet är 4 och man trycker backspace radera 2 tecken
         } else if (postnrInput.value.length == 4 && e.key == "Backspace"){
             postnrInput.value = postnrInput.value.substring(0,2);
         }
         submitField();
 });
 
+//samma fast för ort
 ortInput.addEventListener('input', (e) =>{
     correctOrt = symbolRange(ortInput, "ort-ermsg", "Behöver 2-50 bokstäver");
     submitField();
 });
 
+//Function som validerar användaren input med regX
+//Skriver ut real time meddelande till användaren
+//returnerar false elr true
 function symbolRangeWithRegX(tag, pID, regX, bool, message){
     if(tag.value == null || tag.value == ""){
         document.getElementById(pID).classList.add('yellow');
@@ -128,6 +165,7 @@ function symbolRangeWithRegX(tag, pID, regX, bool, message){
     }
 }
 
+//samma fast utan regEx
 function symbolRange(tag, pID, message){
     if(tag.value.length < 2 || tag.value.length > 50){
         if(tag.value == null || tag.value == ""){
@@ -151,6 +189,9 @@ function symbolRange(tag, pID, message){
     }
 }
 
+//om alla bools för alla input fields är sanna
+//och användaren valt en produkt så blir submit knappen synlig
+//Detta händer när valideringen från alal fields uppfyller kraven
 function submitField(){
     document.getElementById("submit").classList.add('hidden');
     if (correctName &&
@@ -162,6 +203,7 @@ function submitField(){
         document.getElementById("submit").classList.remove('hidden');
     }
 }
+//Skriver ut produkten som HTML
 function printProductHTML(imageURL, title, price){
     return `
         <div class="felx flex-row">

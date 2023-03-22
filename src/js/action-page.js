@@ -1,5 +1,9 @@
+//Om en kund inte finns kommer användaren komma till index sidan
+//Gör det itne möjligt att se sidan genom att skriva in den dirrekta URLen
 if(!window.sessionStorage.getItem('customer')){
     window.location.replace("index.html");
+
+//Annars skriver vi ut varan och beställer med bekräftelse att användaren har köp något
 } else {
     const customer = JSON.parse(window.sessionStorage.getItem('customer'));
     const product = JSON.parse(window.localStorage.getItem('product'));
