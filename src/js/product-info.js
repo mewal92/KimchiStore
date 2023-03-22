@@ -19,6 +19,7 @@ if (window.sessionStorage.getItem("productID") == null){
     getProductById(id);
     //add to cart knapp och dess lyssnare
     const orderButton = document.querySelector("#ORDER");
+    console.log(orderButton);
     orderButton.addEventListener('click', (e) => {
       e.preventDefault();
       //Om det redan finns en vald produkt

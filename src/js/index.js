@@ -27,9 +27,9 @@ async function getProductsByCount(){
                 return b.rating.count - a.rating.count;
             });
             for (let i = 0; i < 10; i++){
-                document.getElementById("topproducts").innerHTML += `
-
-                <div class="product-card">
+                let div = document.createElement("div");
+                div.classList.add("product-card");
+                div.innerHTML = `
                     <figure class="product-header">
                         <img src="${data[i].image}" alt="${data[i].title}">
                     </figure>
@@ -37,8 +37,28 @@ async function getProductsByCount(){
                         <h3 class="product-title">${data[i].title}</h3>
                         <p class="price">${data[i].price}€</p>
                     </article>
-                </div>
-			`;
+                `;
+
+                div.addEventListener('click', e =>{
+                    e.preventDefault();
+                    window.sessionStorage.setItem("productID", data[i].id);
+                    window.document.location = "product-info.html?id=" + data[i].id;
+                })
+                document.getElementById("topproducts").appendChild(div);
+
+
+
+            //     document.getElementById("topproducts").innerHTML += `
+            //     <div class="product-card">
+            //         <figure class="product-header">
+            //             <img src="${data[i].image}" alt="${data[i].title}">
+            //         </figure>
+            //         <article class="product-body">
+            //             <h3 class="product-title">${data[i].title}</h3>
+            //             <p class="price">${data[i].price}€</p>
+            //         </article>
+            //     </div>
+			// `;
             }
         })
         .catch((error) => console.error(error));
