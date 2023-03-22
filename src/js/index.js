@@ -11,10 +11,10 @@ const searchDrop = document.querySelector(".searchDropdown");
 //Variabel till sök knappen
 const submitButton = document.querySelector("#submit");
 
-//const electronics = document.querySelector("#electronics");
-//const jewelery = document.querySelector("#jewelery");
-//const mens = document.querySelector("#mens");
-//const women = document.querySelector("#women");
+const electronics = document.querySelector("#electronic");
+const jewelery = document.querySelector("#jewelery");
+const mens = document.querySelector("#men");
+const women = document.querySelector("#women");
 
 //Produkt lista
 let productList = [];
@@ -152,30 +152,27 @@ function searchEvent(searchWord){
     }
 }
 
-/*
 electronics.addEventListener('click', e =>{
+    e.preventDefault();
     categoryEvent("electronics");
 })
-*/
-/*
+
 jewelery.addEventListener('click', e =>{
+    e.preventDefault();
     categoryEvent("jewelery");
 })
-*/
-/*
+
 mens.addEventListener('click', e =>{
+    e.preventDefault();
     categoryEvent("men's clothing");
 })
-*/
-/*
-electronics.addEventListener('click', e =>{
+
+women.addEventListener('click', e =>{
+    e.preventDefault();
     categoryEvent("women's clothing");
 })
-*/
 
-/*
-function getCategory(category){
+function categoryEvent(category){
     window.sessionStorage.setItem("category", category);
     window.document.location = "produkter.html";
 }
-*/
