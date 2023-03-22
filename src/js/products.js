@@ -2,29 +2,35 @@ import Product from "./product.js";
 
 const productsContainer = document.getElementById("products");
 
+//Lista med IDs som har matchat fåran sökning
 let idList = JSON.parse(window.sessionStorage.getItem("productIDList"));
 
+//fetcha produkter baserat på categori, sök matchningar
+//annars skriv ut alla produkter
 function getAllProducts(){
     fetch("https://fakestoreapi.com/products")
         .then((response) => response.json())
         .then((data) => {
+          //Skriv ut alla produkter om categori valts
           if(window.sessionStorage.getItem("category") != null){
             data.forEach((product) => {
               if(product.category == window.sessionStorage.getItem("category")){
-                printHTML(new Product(product.id, product.title, product.price, product.category, product.description, product.image));
+                productsContainer.innerHTML += printProductHTML(product.image, product.title, product.price);
               }
             });
+            //Skriv ut alla produkter som matchat en sökning
           } else if (idList){
             data.forEach((product) => {
               idList.forEach(e =>{
                 if(product.id == e){
-                  printHTML(new Product(product.id, product.title, product.price, product.category, product.description, product.image));
+                  productsContainer.innerHTML += printProductHTML(product.image, product.title, product.price);
                 }
               })
             });
+            //Annars skriv ut alla
           } else {
             data.forEach((product) => {
-              printHTML(new Product(product.id, product.title, product.price, product.category, product.description, product.image));
+              productsContainer.innerHTML += printProductHTML(product.image, product.title, product.price);
             });
           }
           window.sessionStorage.removeItem("category");
@@ -34,8 +40,19 @@ function getAllProducts(){
         .catch((error) => console.error(error));
 }
 
-function printHTML(product){
-  productsContainer.innerHTML += product.toHTMLDisplay();
+//Metod som printar HTML
+function printProductHTML(imageURL, title, price){
+  return `
+        <div>
+            <figure class="img-header">
+                <img src="${imageURL}" alt="${title}">
+            </figure>
+            <article class="product-body">
+                <h3>${title}</h3>
+                <p class="price">${price} €</p>
+            </article>
+        </div>
+        `;
 }
 
 getAllProducts();
