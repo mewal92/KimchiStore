@@ -291,7 +291,7 @@ form.example button:hover {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
 
-  #topproducts .img-header{
+  #topproducts .product-header{
     display: flex;
     justify-content: center;
     aspect-ratio: 16/9;
@@ -546,7 +546,7 @@ input[type=text], input[type=email], select, textarea {
   }
 
   /* för att kunna få bilder i samma storlek */
-  .img-header{
+  .product-header{
     display: flex;
     justify-content: center;
     aspect-ratio: 16/9;

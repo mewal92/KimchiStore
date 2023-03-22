@@ -30,7 +30,7 @@ async function getProductsByCount(){
                 document.getElementById("topproducts").innerHTML += `
 
                 <div class="product-card">
-                    <figure class="img-header">
+                    <figure class="product-header">
                         <img src="${data[i].image}" alt="${data[i].title}">
                     </figure>
                     <article class="product-body">

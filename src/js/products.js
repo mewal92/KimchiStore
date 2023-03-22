@@ -44,7 +44,7 @@ function getAllProducts(){
 function printProductHTML(imageURL, title, price){
   return `
         <div class="product-card">
-            <figure class="img-header">
+            <figure class="product-header">
                 <img src="${imageURL}" alt="${title}">
             </figure>
             <article class="product-body">
