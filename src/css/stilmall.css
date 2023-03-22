@@ -368,7 +368,7 @@ form.example button:hover {
   position: fixed; /* ska sitta fast vid toppen */
   top: 0;
   width: 100%;
-  z-index: 2; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
+  z-index: 3; /* z-index +3 för att lägga navigerings menyn över andra saker på sidan */
   /*float: right;*/
 }
 
@@ -406,19 +406,6 @@ li a:hover:not(.active) {
 
 .nav li.active a {
   background: rgb(120, 179, 255, 0.4); 
-}
-
-/* text och container för startsida */
-
-h6 {
-  color: rgb(230, 216, 72);
-  text-decoration: none;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 30px;
-  margin-top: 40px;
-  margin-left: 253px;
-  margin-bottom: -7px;
-  padding-bottom: -30px;
 }
 
 
