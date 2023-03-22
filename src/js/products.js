@@ -29,6 +29,7 @@ function getAllProducts(){
           }
           window.sessionStorage.removeItem("category");
           window.sessionStorage.removeItem("productIDList");
+
         })
         .catch((error) => console.error(error));
 }

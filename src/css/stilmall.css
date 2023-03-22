@@ -170,6 +170,18 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  display: block; 
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 25px;
+}
+
+
+
 /* STARTSIDA */
 .mainsection {
     background: rgba(255, 255, 255, 0.505); 
@@ -212,6 +224,7 @@ form.example button:hover {
 }
 
 .searchInput {
+  z-index: 3;
   width: 100%;
   height: 42px;
   position: relative;
@@ -256,42 +269,70 @@ form.example button:hover {
   letter-spacing: 15px;
 }
 
+
 #topproducts{
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
 }
    #topproducts div {
-    background-color: white;
-    width: calc(20% - 20px); /* adjust the width and margin as needed */
-    margin: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+    position: relative;
+    border-radius: 15px;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+
+  #topproducts .img-header{
+    display: flex;
+    justify-content: center;
+    aspect-ratio: 16/9;
+    overflow: hidden;
   }
   
   /* rubriker för produkter */
-  #topproducts div h2 {
-    color:#000;
+  #topproducts div h3 {
     font-family: 'Sen', sans-serif;
-    font-size: 18px;
-    margin-top: 0;
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
   }
   
   /* produkt bilder */
   #topproducts div img {
-    max-width: 60%;
-    height: auto;
+    max-width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+  }
+
+  #topproducts .product-body{
+    padding: 10px;
   }
   
   
   /* produkt pris */
-  #topproducts div p:nth-of-type(2) {
+  #topproducts .price {
+    position: absolute;
+    margin-bottom: 5px;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #topproducts div:hover {
+    scale: 1.1;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
 
@@ -305,7 +346,7 @@ form.example button:hover {
   position: fixed; /* ska sitta fast vid toppen */
   top: 0;
   width: 100%;
-  z-index: 1; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
+  z-index: 2; /* z-index +1 för att lägga navigerings menyn över andra saker på sidan */
   /*float: right;*/
 }
 
@@ -369,11 +410,12 @@ h6 {
   margin-left: 0px;
   margin-right:0px;
   margin-top: 0px;
-    position: fixed;
-   bottom: 0;
-   color: white;
-   padding-bottom: 15px;
-   padding-top: 15px;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  z-index: 2;
 }
 
 
@@ -387,16 +429,6 @@ h4 {
   padding: 0px;
   text-decoration: none;
   font-family: 'Tahoma', sans-serif;
-}
-
-h3 {
-  display: block; 
-  color: black;
-  text-align: center;
-  padding: 10px;
-  text-decoration: none;
-  font-family: 'Tahoma', sans-serif;
-  font-size: 25px;
 }
 
 .flex-containerkontakt {
@@ -478,12 +510,7 @@ input[type=text], input[type=email], select, textarea {
   /* PRODUCTS */ 
 
   /*rubriker för saker*/
-  h3{
-    float:left;
-    font-size: 12px;
-    font-family: 'Karla', sans-serif;
-    color: darkgrey;
-  }
+  
 
 /*produkt container*/
 #products {
@@ -499,18 +526,20 @@ input[type=text], input[type=email], select, textarea {
   
   /* produkt elementen */
   #products div {
+    position: relative;
     border-radius: 15px;
     background: #fff;
     transform-origin: center;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
     height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
   
   /* rubriker för produkter */
   #products div h3 {
+    font-family: 'Sen', sans-serif;
     width: 100%;
-    font-family: cursive;
     margin: 0 0 10px 0;
     font-size: 1.1rem;
     letter-spacing: 0.04em;
@@ -535,14 +564,17 @@ input[type=text], input[type=email], select, textarea {
   
   /* produkt pris */
   .price{
-    text-align: center;
+    position: absolute;
     font-size: 16px;
+    margin-bottom: 20px;
     font-weight: bold;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #products div:hover {
   scale: 1.1;
   z-index: 1;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
