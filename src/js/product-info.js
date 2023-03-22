@@ -71,7 +71,7 @@ function printProductHTML(imageURL, title, description, price){
           <article class="product-body">
             <h3 class="product-title">${title}</h3>
             <p>${description}</p>
-            <p class="margin-top">${price} €</p>
+            <p class="margin-top">${price}€</p>
           </article>
         </div>
       `;
