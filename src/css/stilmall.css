@@ -7,120 +7,6 @@
   font-family: "Manrope", sans-serif;
 }
 
-.margin-top {
-  margin-top: 1rem;
-}
-
-.text-black {
-  color: #000;
-}
-
-.flex {
-  display: flex;
-}
-
-.max-768px {
-  max-width: 48rem;
-}
-
-.auto-margin {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.gap-16px {
-  gap: 1rem
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.margin-bottom-192px {
-  margin-bottom: 12rem;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-.gap-6px{
-  gap: 0.50rem;
-}
-
-.red {
-  color: red;
-}
-
-.green {
-  color: green;
-}
-
-.yellow {
-  color: rgb(219, 219, 2);
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.flex-nowrap {
-  flex-wrap: nowrap;
-}
-
-.max-hight-200px {
-  max-height: 200px;
-}
-
-.max-hight-150px {
-  max-height: 150px;
-}
-
-.width-full {
-  width: 100%;
-}
-
-.width-50 {
-  width: 50%;
-}
-
-.width-90 {
-  width: 90%;
-}
-
-.width-2third {
-  width: 77.777777%;
-}
-
-.width-third {
-  width: 33.333333%;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.hight-full {
-  height: 100%;
-}
-
-.object-full {
-  object-fit: cover;
-}
-
-.break-words{
-  overflow-wrap: break-word;
-}
-
-
 /*Bakgrunden */
 body {
   background-color: lightblue;
@@ -508,4 +394,128 @@ input[type=text], input[type=email], select, textarea {
   
 input:radio {
   margin: .4rem;
+}
+
+
+
+
+
+
+
+
+
+
+/*Gustavs CSS*/
+
+.margin-top {
+  margin-top: 1rem;
+}
+
+.text-black {
+  color: #000;
+}
+
+.flex {
+  display: flex;
+}
+
+.max-768px {
+  max-width: 48rem;
+}
+
+.auto-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gap-16px {
+  gap: 1rem
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.margin-bottom-192px {
+  margin-bottom: 12rem;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.gap-6px{
+  gap: 0.50rem;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: rgb(219, 219, 2);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.max-hight-200px {
+  max-height: 200px;
+}
+
+.max-hight-150px {
+  max-height: 150px;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-90 {
+  width: 90%;
+}
+
+.width-2third {
+  width: 77.777777%;
+}
+
+.width-third {
+  width: 33.333333%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.hight-full {
+  height: 100%;
+}
+
+.object-full {
+  object-fit: cover;
+}
+
+.break-words{
+  overflow-wrap: break-word;
 }
