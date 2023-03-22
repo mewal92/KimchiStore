@@ -43,13 +43,13 @@ function getAllProducts(){
 //Metod som printar HTML
 function printProductHTML(imageURL, title, price){
   return `
-        <div>
+        <div class="product-card">
             <figure class="img-header">
                 <img src="${imageURL}" alt="${title}">
             </figure>
             <article class="product-body">
-                <h3>${title}</h3>
-                <p class="price">${price} €</p>
+                <h3 class="product-title">${title}</h3>
+                <p class="price">${price}€</p>
             </article>
         </div>
         `;

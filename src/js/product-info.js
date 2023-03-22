@@ -64,14 +64,14 @@ async function getProductById(id){
 //Funktion för att printa HTML
 function printProductHTML(imageURL, title, description, price){
   return `
-        <div>
-          <figure class="img-header">
+        <div class="product-card">
+          <figure class="product-header">
             <img src="${imageURL}" alt="${title}">
           </figure>
           <article class="product-body">
-            <h3>${title}</h3>
-            <p class="price">${description}</p>
-            <p class="margin-top price">${price} €</p>
+            <h3 class="product-title">${title}</h3>
+            <p>${description}</p>
+            <p class="margin-top">${price} €</p>
           </article>
         </div>
       `;
