@@ -175,8 +175,12 @@ form.example button:hover {
 .categorycolumn {
   float: left;
   width: 25%;
-  padding: 5px;
-  padding-left: 35px;
+  justify-content: center;
+  flex: auto;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: auto;
+  
 }
 .categorycolumn:hover .catimg {
   opacity: 0.6;
@@ -199,9 +203,10 @@ form.example button:hover {
 }
 
 .catimg {
+  object-fit: contain;
   padding: 10px;
-  width: 70%;
-  height: 70%;
+  max-width: 110px;
+  max-height: 110px;
 }
 
 input[type=pren],[type=prenbutt]{
