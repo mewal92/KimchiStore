@@ -180,6 +180,18 @@ form.example button:hover {
   padding: 5px;
   padding-left: 35px;
 }
+.categorycolumn:hover .catimg {
+  opacity: 0.6;
+  transition: .3s ease;
+  transform: translate(1%, 1%);
+  -ms-transform: translate(1%, 1%);
+    cursor: pointer;
+
+}
+.categorycolumn:hover .categoryrow {
+  opacity: 1;
+}
+
 
 /* Clear floats after image containers */
 .categoryrow::after {
