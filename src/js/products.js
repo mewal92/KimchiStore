@@ -16,6 +16,7 @@ function getAllProducts(){
             data.forEach((product) => {
               if(product.category == window.sessionStorage.getItem("category")){
                 createProductDiv(product.image, product.title, product.price, product.id);
+                
                 //productsContainer.innerHTML += printProductHTML(product.image, product.title, product.price);
               }
             });
