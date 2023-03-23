@@ -1,7 +1,7 @@
 import Product from "./product.js";
 
 //Variabel till taggen som visar produkten
-const productsContainer = document.querySelector("#products");
+const productsContainer = document.querySelector(".singleProductContainer");
 
 //Tom variabel för produkten
 let product;
@@ -19,7 +19,6 @@ if (window.sessionStorage.getItem("productID") == null){
     getProductById(id);
     //add to cart knapp och dess lyssnare
     const orderButton = document.querySelector("#ORDER");
-    console.log(orderButton);
     orderButton.addEventListener('click', (e) => {
       e.preventDefault();
       //Om det redan finns en vald produkt
@@ -52,28 +51,24 @@ async function getProductById(id){
           data.description,
           data.image
         );
-        //Skriver ut produkten i HTML
-        productsContainer.innerHTML = printProductHTML(product.imageURL,
+        //Skriver ut produkten i HTML taggar
+        setHTMLValues(
+          product.imageURL,
           product.title,
           product.description,
           product.price
-          );
+        );
     })
     .catch((error) => console.error(error));
 }
 
-//Funktion för att printa HTML
-function printProductHTML(imageURL, title, description, price){
-  return `
-        <div class="product-card">
-          <figure class="product-header">
-            <img src="${imageURL}" alt="${title}">
-          </figure>
-          <article class="product-body">
-            <h3 class="product-title">${title}</h3>
-            <p>${description}</p>
-            <p class="margin-top">${price}€</p>
-          </article>
-        </div>
-      `;
+//Funktion för att sätta HTML värden
+function setHTMLValues(imageURL, title, description, price){
+
+  document.querySelector('#singleProductImg').innerHTML = `<img src="${imageURL}" alt="${title}">`;
+  document.querySelector('#titleInfo').innerHTML = `
+      <h3 >${title}</h3>
+      <p class="singleProductDesc">${description}</p>
+  `;
+  document.querySelector('#price').innerHTML = `<span>${price}€</span>`;
 }
