@@ -28,5 +28,7 @@ if(!window.sessionStorage.getItem('customer')){
     document.querySelector("#price").innerHTML = `
         Pris: ${cost} €
     `;
-    window.localStorage.removeItem('quantity')
+    window.localStorage.removeItem('quantity');
+    window.localStorage.removeItem('product');
+    window.sessionStorage.removeItem('customer');
 }

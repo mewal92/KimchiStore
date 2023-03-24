@@ -1,4 +1,3 @@
-import Product from "./product.js"; //Kommer att användas i framtiden med en cart
 import Customer from "./customer.js"; //laddar customer klassen
 
 let quantity = 1;

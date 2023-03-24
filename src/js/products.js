@@ -1,9 +1,40 @@
-import Product from "./product.js";
-
 const productsContainer = document.getElementById("products");
+
+const electronics = document.querySelector("#electronic");
+const jewelery = document.querySelector("#jewelery");
+const mens = document.querySelector("#men");
+const women = document.querySelector("#women");
+
+electronics.addEventListener('click', e =>{
+  e.preventDefault();
+  categoryEvent("electronics");
+})
+
+jewelery.addEventListener('click', e =>{
+  e.preventDefault();
+  categoryEvent("jewelery");
+})
+
+mens.addEventListener('click', e =>{
+  e.preventDefault();
+  categoryEvent("men's clothing");
+})
+
+women.addEventListener('click', e =>{
+  e.preventDefault();
+  categoryEvent("women's clothing");
+})
+
+function categoryEvent(category){
+  window.sessionStorage.setItem("category", category);
+  productsContainer.innerHTML = null;
+  getAllProducts();
+}
 
 //Lista med IDs som har matchat fåran sökning
 let idList = JSON.parse(window.sessionStorage.getItem("productIDList"));
+
+
 
 //fetcha produkter baserat på categori, sök matchningar
 //annars skriv ut alla produkter
@@ -16,8 +47,6 @@ function getAllProducts(){
             data.forEach((product) => {
               if(product.category == window.sessionStorage.getItem("category")){
                 createProductDiv(product.image, product.title, product.price, product.id);
-                
-                //productsContainer.innerHTML += printProductHTML(product.image, product.title, product.price);
               }
             });
             //Skriv ut alla produkter som matchat en sökning
