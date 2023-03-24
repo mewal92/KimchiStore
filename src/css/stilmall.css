@@ -617,6 +617,7 @@ input:radio {
   background-color: white;
   border: solid 1px;
   margin: 0 2px 0 2px;
+  height: 20px;
 }
 
 .quantity p{
