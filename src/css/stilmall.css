@@ -591,8 +591,8 @@ input:radio {
 }
 
 .product-img{
-  aspect-ratio: 9/9;
-  height: 100px;
+  min-width: 75x;
+  height: 75px;
   display: flex;
   overflow: hidden;
 }

@@ -1,6 +1,8 @@
 import Product from "./product.js"; //Kommer att användas i framtiden med en cart
 import Customer from "./customer.js"; //laddar customer klassen
 
+let quantity = 1;
+
 /**
  * om en produkt är vald kommer produktens
  * bild, titel och pris visas längst ned
@@ -15,6 +17,8 @@ if(window.localStorage.getItem("product")){
         JSON.parse(window.localStorage.getItem("product")).title,
         JSON.parse(window.localStorage.getItem("product")).price
     );
+    addition(JSON.parse(window.localStorage.getItem("product")).price);
+    subtraction(JSON.parse(window.localStorage.getItem("product")).price);
     //remove knapp om man vill ta bort den valda produkten
     const remove = document.querySelector('#remove');
     const totalPrice = document.querySelector('#totprice');
@@ -79,6 +83,7 @@ submit.addEventListener('click', e =>{
             postnrInput.value,
             ortInput.value)
     ))
+    window.sessionStorage.setItem("quantity", quantity);
     window.document.location = "action-page.html";
 })
 
@@ -220,11 +225,43 @@ function printProductHTML(imageURL, title, price){
             
 
             <div class="quantity">
-                <button>+</button>
-                <button>-</button>
-                <p>antal: 1</P>
+                <button id="addButton" >+</button>
+                <button id="subButton" >-</button>
+                <p id="productQuantity">antal: ${quantity}</P>
             </div>
-
-        </div>
       `;
+}
+
+function addition(totalPrice){
+    let addButton = document.querySelector('#addButton');
+    let totprice = document.querySelector('#totprice');
+    addButton.addEventListener('click', e =>{
+        e.preventDefault();
+        quantity++;
+        let realCost = totalPrice * quantity;
+        let cost = Math.round((realCost + Number.EPSILON) * 100) / 100;
+        document.querySelector('#productQuantity').innerHTML = "antal: " + quantity;
+        totprice.innerHTML = `Total ${cost} €`;
+    })
+}
+
+function subtraction(totalPrice){
+    let addButton = document.querySelector('#subButton');
+    let order = document.querySelector('#orders');
+    let totprice = document.querySelector('#totprice');
+    addButton.addEventListener('click', e =>{
+        e.preventDefault();
+        quantity--;
+        if(quantity <= 0){
+            order.innerHTML = null;
+            totprice.innerHTML = null;
+            window.localStorage.removeItem("product");
+            document.querySelector('#remove').classList.add("hidden");
+        }else{
+            let realCost = totalPrice * quantity;
+            let cost = Math.round((realCost + Number.EPSILON) * 100) / 100;
+            document.querySelector('#productQuantity').innerHTML = "antal: " + quantity;
+            totprice.innerHTML = `Total ${cost} €`;
+        }
+    })
 }
