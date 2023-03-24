@@ -581,6 +581,7 @@ input:radio {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  max-width: 400px;
 }
 
 .product-and-title h3{
@@ -590,11 +591,10 @@ input:radio {
 }
 
 .product-img{
+  width: 120px;
   display: flex;
-  justify-content: center;
   height: 90px;
   overflow: hidden;
-  
 }
 
 .product-img img{
