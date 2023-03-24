@@ -568,6 +568,61 @@ input:radio {
   margin: .4rem;
 }
 
+.cart{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-and-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.product-and-title h3{
+  font-family: 'Sen', sans-serif;
+  font-weight: 600;
+  font-size: 0.99em;
+}
+
+.product-img{
+  display: flex;
+  justify-content: center;
+  height: 90px;
+  overflow: hidden;
+  
+}
+
+.product-img img{
+  max-width: 100%;
+}
+
+.action-price{
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.quantity{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.quantity button{
+  width: 20px;
+  background-color: white;
+  border: solid 1px;
+  margin: 0 2px 0 2px;
+}
+
+.quantity p{
+  margin-left: 10px;
+}
+
 
 
 

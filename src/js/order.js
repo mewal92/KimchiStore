@@ -206,10 +206,25 @@ function submitField(){
 //Skriver ut produkten som HTML
 function printProductHTML(imageURL, title, price){
     return `
-        <div class="felx flex-row">
-            <img src="${imageURL}" alt="${title}">
-            <p>${title}</p>
-            <p class="price">${price} €</p>
+        <div class="cart">
+
+            <div class="product-and-title">
+                <div class="product-img">
+                    <img src="${imageURL}" alt="${title}">
+                </div>
+                <h3>${title}</h3>
+            </div>
+
+            
+            <p class="action-price">${price} €</p>
+            
+
+            <div class="quantity">
+                <button>+</button>
+                <button>-</button>
+                <p>antal: 1</P>
+            </div>
+
         </div>
       `;
 }
