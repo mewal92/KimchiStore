@@ -49,7 +49,8 @@ async function getProductById(id){
           data.price,
           data.category,
           data.description,
-          data.image
+          data.image,
+          1
         );
         //Skriver ut produkten i HTML taggar
         setHTMLValues(
