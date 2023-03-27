@@ -747,3 +747,18 @@ input:radio {
 .break-words{
   overflow-wrap: break-word;
 }
+
+/*ACTION PAGE */
+.flex-containerorder{
+  background-color: #f8f8f89e;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.ordertext {
+  text-align: left;
+  font-size: 20px;
+  padding: 20px;
+}
