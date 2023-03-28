@@ -495,11 +495,13 @@ li a:hover:not(.active) {
   width: 40%;
   height: 17px;
   margin: 1% auto auto;
+  
 }
 .contact-input-textarea{
   min-height: 100px;
   width: 40%;
   margin: 1% auto auto;
+
 }
 #contact-submit{
   width: 40%;
@@ -523,18 +525,8 @@ li a:hover:not(.active) {
   margin: 10px auto auto;
   padding: 1%;
 }
-/* end contact.html */
 
-input[type=textkontakt], [type=subject], textarea {
-  width: 40%;
-margin: auto;
-content: "";
-clear: both;
-display: table;
-padding: 7px;
-margin-bottom: 10px;
-margin-top: 10px;
-}
+
 
 
 
