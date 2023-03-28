@@ -17,13 +17,13 @@ function panel() {
             <a href="contact.html">Kontakt</a>
           </li>
           <li class="${path.includes("/produkter.html") ? "active" : ""}">
-            <a href="produkter.html">Produkter</a>
+            <a href="produkter.html">Products</a>
           </li>
           <li class="${path.includes("/order.html") ? "active" : ""}">
-            <a href="order.html">Beställning</a>
+            <a href="order.html">Order</a>
           </li>
           <li class="${path.includes("/index.html") ? "active" : ""}">
-            <a href="index.html">Startsida</a>
+            <a href="index.html">Startpage</a>
           </li>
         </ul>
       </nav>
