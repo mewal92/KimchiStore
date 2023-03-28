@@ -483,16 +483,47 @@ li a:hover:not(.active) {
   height: 30px;
 }
 
+/* contact.html */
 .flex-containerkontakt {
-  background: rgba(255, 255, 255, 0.4); 
-  float: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 20px 20% auto;
   padding: 5px;
   display: block;
   text-align: center;
 }
+.contact-input {
+  width: 40%;
+  height: 17px;
+  margin: 1% auto auto;
+}
+.contact-input-textarea{
+  min-height: 100px;
+  width: 40%;
+  margin: 1% auto auto;
+}
+#contact-submit{
+  width: 40%;
+  margin: 1% 10% auto;
+}
+.sent-message {
+  padding: 2%;
+}
+.contact-action-page-visible {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20% 30px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 5%;
+  text-align: center;
+  min-height: 100px;
+  font-size: large;
+}
+#back-button{
+  margin: 10px auto auto;
+  padding: 1%;
+}
+/* end contact.html */
 
 input[type=textkontakt], [type=subject], textarea {
   width: 40%;

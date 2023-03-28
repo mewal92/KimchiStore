@@ -13,8 +13,8 @@ function panel() {
     header.innerHTML = `
       <nav class="nav">
         <ul>
-          <li class="${path.includes("/kontakt.html") ? "active" : ""}">
-            <a href="kontakt.html">Kontakt</a>
+          <li class="${path.includes("/contact.html") ? "active" : ""}">
+            <a href="contact.html">Kontakt</a>
           </li>
           <li class="${path.includes("/produkter.html") ? "active" : ""}">
             <a href="produkter.html">Produkter</a>
