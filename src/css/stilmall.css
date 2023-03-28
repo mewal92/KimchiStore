@@ -577,17 +577,18 @@ input[type=text], input[type=email], select, textarea {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 400px;
 }
 
 .product-and-title h3{
   font-family: 'Sen', sans-serif;
   font-weight: 600;
   font-size: 0.99em;
+  max-width: 200px;
+  float: left;
 }
 
 .product-img{
-  min-width: 75x;
+  max-width: 120px;
   height: 75px;
   display: flex;
   overflow: hidden;
