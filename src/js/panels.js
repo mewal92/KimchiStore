@@ -14,7 +14,7 @@ function panel() {
       <nav class="nav">
         <ul>
           <li class="${path.includes("/contact.html") ? "active" : ""}">
-            <a href="contact.html">Kontakt</a>
+            <a href="contact.html">Contact us</a>
           </li>
           <li class="${path.includes("/produkter.html") ? "active" : ""}">
             <a href="produkter.html">Products</a>
@@ -23,7 +23,7 @@ function panel() {
             <a href="order.html">Order</a>
           </li>
           <li class="${path.includes("/index.html") ? "active" : ""}">
-            <a href="index.html">Startpage</a>
+            <a href="index.html">Home</a>
           </li>
         </ul>
       </nav>
