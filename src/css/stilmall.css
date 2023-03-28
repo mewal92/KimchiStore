@@ -152,7 +152,7 @@ form.example button:hover {
 }
 
 #categoryhead {
-  background-color: #ffffff83;
+  background-color: #ffffff99;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
@@ -607,6 +607,7 @@ input[type=text], input[type=email], select, textarea {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .quantity button{
@@ -619,6 +620,15 @@ input[type=text], input[type=email], select, textarea {
 
 .quantity p{
   margin-left: 10px;
+}
+
+.submission button{
+  margin-top: 10px;
+  background-color: #95c8f1;
+  border: solid 1px;
+  border-radius: 4px;
+  height: 30px;
+  width: 50px;
 }
 
 
@@ -832,6 +842,7 @@ input[type=text], input[type=email], select, textarea {
   
   .flex-containerbeställning {
     margin: auto;
+    margin-bottom: 50px;
     padding: 0;
     width: 90%;
   }
