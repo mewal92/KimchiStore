@@ -1,5 +1,6 @@
 import Customer from "./customer.js"; //laddar customer klassen
 
+const submit = document.querySelector("#submit");
 /**
  * om en produkt är vald kommer produktens
  * bild, titel och pris visas längst ned
@@ -27,6 +28,7 @@ if(localStorage.getItem("product")){
         order.innerHTML = null;
         totalPrice.innerHTML = null;
         window.localStorage.removeItem("product");
+        submit.classList.add("hidden");
         remove.classList.add("hidden");
     })
 }
@@ -42,7 +44,6 @@ const addressInput = document.querySelector("#address");
 const postnrInput = document.querySelector("#postnr");
 const ortInput = document.querySelector("#ort");
 
-const submit = document.querySelector("#submit");
 
 //Nollar alla värden i fälten
 nameInput.value = "";
