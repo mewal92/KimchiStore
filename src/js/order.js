@@ -6,10 +6,10 @@ import Customer from "./customer.js"; //laddar customer klassen
  * samt en total pris på vald produkt. Detta kan sedan bli en sumering
  * om man valt flera produkter
  */
-if(window.localStorage.getItem("product")){
+if(localStorage.getItem("product")){
     const order = document.querySelector('#orders');
     //metod som skriver ut html finns längst ned på denna sida
-    let product = JSON.parse(window.localStorage.getItem("product"));
+    let product = JSON.parse(localStorage.getItem("product"));
     order.innerHTML = printProductHTML(product);
     addition(product);
     subtraction(product);
@@ -69,7 +69,7 @@ let correctOrt = false;
  */
 submit.addEventListener('click', e =>{
     e.preventDefault();
-    window.sessionStorage.setItem("customer", JSON.stringify(
+    sessionStorage.setItem("customer", JSON.stringify(
         new Customer(nameInput.value,
             emailInput.value,
             telInput.value,
@@ -77,7 +77,7 @@ submit.addEventListener('click', e =>{
             postnrInput.value,
             ortInput.value)
     ))
-    window.sessionStorage.setItem("product", product);
+    //localStorage.setItem("product", JSON.stringify(product));
     window.document.location = "action-page.html";
 })
 
@@ -198,7 +198,7 @@ function submitField(){
         correctTel &&
         correctAddress &&
         correctPostnr &&
-        correctOrt && window.localStorage.getItem("product")){
+        correctOrt && localStorage.getItem("product")){
         document.getElementById("submit").classList.remove('hidden');
     }
 }
