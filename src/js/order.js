@@ -253,6 +253,7 @@ function subtraction(product){
             totprice.innerHTML = null;
             window.localStorage.removeItem("product");
             document.querySelector('#remove').classList.add("hidden");
+            document.getElementById("submit").classList.add('hidden');
         }else{
             let realCost = product.price * product.quantity;
             let cost = Math.round((realCost + Number.EPSILON) * 100) / 100;
